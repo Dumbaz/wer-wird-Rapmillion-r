@@ -43,6 +43,41 @@ def test_jede_frage_hat_drei_eindeutige_antworten():
         assert q.answers[q.correct_index] == q.artist, q.id
 
 
+def test_jede_zeile_hat_eine_belegquelle():
+    """Quellenpflicht: ohne verifizierbare Lyrics-Quelle kein Eintrag.
+
+    Dieser Test existiert, weil ein frueherer Katalog erfundene Zeilen enthielt.
+    """
+    for q in QUESTIONS:
+        assert q.source_url.startswith("https://"), q.id
+        assert "genius.com" in q.source_url, q.id
+        assert q.source_url.endswith("-lyrics"), q.id
+
+
+def test_zeile_verraet_die_antwort_nicht():
+    """Der Kuenstlername darf nicht in der Zeile stehen."""
+    for q in QUESTIONS:
+        haystack = q.line.casefold()
+        for token in q.artist.replace("&", " ").split():
+            token = token.strip(".").casefold()
+            if len(token) < 4:
+                continue
+            assert token not in haystack, f"{q.id}: '{token}' steht in der Zeile"
+
+
+def test_zeilen_sind_eindeutig_und_plausibel_lang():
+    lines = [q.line for q in QUESTIONS]
+    assert len(set(lines)) == len(lines), "doppelte Zeilen im Katalog"
+    for q in QUESTIONS:
+        assert 3 <= len(q.line.split()) <= 20, f"{q.id}: {len(q.line.split())} Woerter"
+
+
+def test_quellen_sind_eindeutig_pro_song():
+    """Kein Song darf zweimal als Frage vorkommen."""
+    urls = [q.source_url for q in QUESTIONS]
+    assert len(set(urls)) == len(urls), "derselbe Song mehrfach im Katalog"
+
+
 def test_alle_cover_dateien_existieren():
     covers = Path(__file__).resolve().parent.parent / "static" / "covers"
     for q in QUESTIONS:
@@ -91,7 +126,8 @@ def test_kompletter_durchlauf_bis_zur_million():
         reveal = result["reveal"]
         assert reveal["cover_url"].endswith(".svg")
         assert "/covers/" in reveal["cover_url"]
-        assert reveal["artist"] and reveal["album"] and reveal["fun_fact"]
+        assert reveal["artist"] and reveal["album"]
+        assert "genius.com" in reveal["source_url"]
         state = result["state"]
 
     assert state["status"] == "won"

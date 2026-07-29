@@ -384,13 +384,19 @@ body {
   color: var(--text-dim);
 }
 
-.reveal__fact {
+.reveal__source {
   margin: 0 0 18px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-dim);
-  border-left: 3px solid var(--cyan);
-  padding-left: 12px;
+  font-size: 13px;
+}
+
+.reveal__source a {
+  color: var(--cyan);
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+
+.reveal__source a:hover {
+  color: var(--magenta);
 }
 
 @keyframes cover-in {

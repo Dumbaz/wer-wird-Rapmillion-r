@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Alles oder Nix von SSIO">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(292 0.5 0.5)">
+      <stop offset="0%" stop-color="#ff004d"/>
+      <stop offset="100%" stop-color="#3a0a2e"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <rect x="-600.0" y="-600" width="45.7" height="1800" fill="#ffb800" opacity="0.33" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-450.0" y="-600" width="54.2" height="1800" fill="#ffb800" opacity="0.20" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-300.0" y="-600" width="31.9" height="1800" fill="#ffb800" opacity="0.35" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-150.0" y="-600" width="22.0" height="1800" fill="#ffb800" opacity="0.29" transform="rotate(28 300.0 300.0)"/>
+    <rect x="0.0" y="-600" width="17.4" height="1800" fill="#ffb800" opacity="0.35" transform="rotate(28 300.0 300.0)"/>
+    <rect x="150.0" y="-600" width="16.6" height="1800" fill="#ffb800" opacity="0.23" transform="rotate(28 300.0 300.0)"/>
+    <rect x="300.0" y="-600" width="41.4" height="1800" fill="#ffb800" opacity="0.29" transform="rotate(28 300.0 300.0)"/>
+    <rect x="450.0" y="-600" width="36.5" height="1800" fill="#ffb800" opacity="0.39" transform="rotate(28 300.0 300.0)"/>
+    <rect x="600.0" y="-600" width="19.0" height="1800" fill="#ffb800" opacity="0.11" transform="rotate(28 300.0 300.0)"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ffb800">SSIO</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">ALLES ODER NIX</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2025</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ffb800" stroke-width="6" opacity="0.9"/>
+</svg>

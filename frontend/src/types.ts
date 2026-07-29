@@ -22,7 +22,7 @@ export interface SongReveal {
   album: string;
   year: number;
   cover_url: string;
-  fun_fact: string;
+  source_url: string;
 }
 
 export interface LifelineState {

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Urlaub fürs Gehirn von K.I.Z">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(80 0.5 0.5)">
+      <stop offset="0%" stop-color="#ff004d"/>
+      <stop offset="100%" stop-color="#3a0a2e"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <polygon points="78.1,276.1 312.1,302.9 212.0,455.3" fill="none" stroke="#ffb800" stroke-width="5.3" opacity="0.30"/>
+    <polygon points="-113.4,481.1 -62.5,387.0 112.8,403.4" fill="none" stroke="#ffb800" stroke-width="6.6" opacity="0.47"/>
+    <polygon points="15.5,491.0 -44.3,452.1 -52.7,365.3" fill="none" stroke="#ffb800" stroke-width="2.4" opacity="0.21"/>
+    <polygon points="480.0,345.3 320.5,258.9 536.8,114.8" fill="none" stroke="#ffb800" stroke-width="4.0" opacity="0.19"/>
+    <polygon points="298.9,118.0 446.0,179.1 285.8,71.5" fill="none" stroke="#ffb800" stroke-width="4.9" opacity="0.30"/>
+    <polygon points="417.0,425.2 674.1,283.9 615.7,244.7" fill="none" stroke="#ffb800" stroke-width="4.7" opacity="0.43"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="380" width="600" height="220" fill="#000" opacity="0.58"/>
+    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ffb800">K.I.Z</text>
+    <text x="52" y="480" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">URLAUB FÜRS</tspan>
+      <tspan x="52" dy="58">GEHIRN</tspan>
+    </text>
+    <text x="548" y="426" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2011</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ffb800" stroke-width="6" opacity="0.9"/>
+</svg>

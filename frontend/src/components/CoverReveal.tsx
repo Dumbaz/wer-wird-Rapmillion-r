@@ -23,7 +23,11 @@ export function CoverReveal({ reveal, correct, onContinue, continueLabel }: Prop
         <p className="reveal__track">
           „{reveal.track}“ · <em>{reveal.album}</em> ({reveal.year})
         </p>
-        <p className="reveal__fact">{reveal.fun_fact}</p>
+        <p className="reveal__source">
+          <a href={reveal.source_url} target="_blank" rel="noreferrer noopener">
+            Songtext auf Genius nachlesen ↗
+          </a>
+        </p>
         <button type="button" className="btn btn--primary" onClick={onContinue} autoFocus>
           {continueLabel}
         </button>

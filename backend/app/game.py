@@ -151,7 +151,7 @@ class Session:
             album=question.album,
             year=question.year,
             cover_url=f"{cover_base}/{question.cover}",
-            fun_fact=question.fun_fact,
+            source_url=question.source_url,
         )
 
         if correct:

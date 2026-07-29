@@ -17,15 +17,32 @@ Albumcover eingeblendet.
 | 15 Stufen | Von 50 € bis 1.000.000 €, Schwierigkeit steigt kontinuierlich |
 | Sicherheitsstufen | Bei 500 € (Stufe 5) und 16.000 € (Stufe 10) |
 | 45 Fragen | 3 pro Stufe, pro Runde zufällig gezogen und gemischt |
+| Belegte Zitate | Jede Zeile ist wörtlich gegen ihre Genius-Quelle verifiziert |
 | 3 Joker | Fifty-Fifty, Publikumsjoker, Skip |
 | Aussteigen | Gewinn jederzeit ab Stufe 2 sichern |
-| Cover-Reveal | Albumcover, Track, Album, Jahr und ein Fun-Fact nach jeder Antwort |
+| Cover-Reveal | Albumcover, Track, Album, Jahr und Quellenlink nach jeder Antwort |
 | Funky Sounds | Arpeggio bei richtig, Bass-Wobble + Scratch bei falsch, Fanfare bei der Million |
 | Reload-fest | Laufende Session wird über `localStorage` wiederhergestellt |
 
-Schwierigkeitskurve: Stufe 1–5 Chart-Hits (Sido, Capital Bra, Haftbefehl),
-6–10 Album-Deep-Cuts (Kool Savas, Trettmann, Torch), 11–15 Underground und
-Old School (Advanced Chemistry, Fischmob, Fresh Familee 1991).
+Schwierigkeitskurve: Stufe 1–5 Chart-Hits (Apache 207, Haftbefehl, Bausa),
+6–10 bekannte Punchlines (K.I.Z, Kollegah, SSIO), 11–15 Klassiker und
+Underground (Advanced Chemistry 1992, Torch, Massive Töne, Doppelkopf).
+
+## Herkunft der Zitate
+
+Die Auswahl kombiniert zwei Signale:
+
+- **Genius-Views** als Bekanntheitsmaß — steuert, auf welcher Stufe eine Zeile landet
+- **Hoch geupvotete Punchline-Threads aus r/GermanRap** — Community-Relevanz
+
+Reddit-Zitate wurden ausnahmslos gegen Genius geprüft, weil dort fast immer aus
+dem Gedächtnis und damit ungenau zitiert wird (Beispiel: „Du hast mehr Väter als
+griechischer Salat" heißt im Original „Du Verräter hast mehr Väter als
+griechischer Salat").
+
+**Inhaltsfilter:** Derbe, vulgäre und misogyne Zeilen sind bewusst enthalten —
+sie gehören zum Genre. Ausgeschlossen wurden homophobe und fremdenfeindliche
+Zeilen.
 
 ## Setup
 
@@ -70,10 +87,27 @@ pip install -r requirements-dev.txt
 python -m pytest tests -q
 ```
 
-Abgedeckt: Datenqualität des Katalogs, Existenz aller Cover, kompletter
-Durchlauf bis zur Million, Sicherheitsstufen-Logik, Cash-out, alle drei Joker
-und die Zusicherung, dass die Lösung nie an den Client geht, bevor geantwortet
-wurde.
+Abgedeckt: Datenqualität des Katalogs, Quellenpflicht, Existenz aller Cover,
+kompletter Durchlauf bis zur Million, Sicherheitsstufen-Logik, Cash-out, alle
+drei Joker und die Zusicherung, dass die Lösung nie an den Client geht, bevor
+geantwortet wurde. Zusätzlich wird geprüft, dass keine Zeile den Künstlernamen
+enthält und kein Song doppelt vorkommt.
+
+### Quellenprüfung
+
+Fährt alle 45 Zeilen gegen ihre Genius-Seiten und schlägt fehl, sobald eine
+Zeile dort nicht wörtlich auffindbar ist:
+
+```bash
+cd backend
+python tools/verify_sources.py          # alle Einträge
+python tools/verify_sources.py q003     # einzelne ID
+```
+
+Dieses Skript existiert aus gutem Grund: Eine frühere Fassung des Katalogs
+enthielt 43 von 45 **frei erfundenen** Zeilen sowie zahlreiche falsche Alben und
+Jahreszahlen. Der Katalog wurde daraufhin vollständig neu aufgebaut. `source_url`
+ist seitdem Pflichtfeld, und `tests/test_api.py` lehnt Einträge ohne Quelle ab.
 
 ### Visueller Test
 
@@ -114,7 +148,9 @@ backend/
 │   ├── routes.py          API-Endpunkte
 │   └── data/questions.py  Fragenkatalog
 ├── static/covers/         NUR Albumcover (44 SVGs)
-├── tools/gen_covers.py    Cover-Generator
+├── tools/
+│   ├── gen_covers.py      Cover-Generator
+│   └── verify_sources.py  Quellenprüfung der Zitate
 └── tests/test_api.py
 
 frontend/src/
@@ -128,9 +164,18 @@ frontend/src/
 
 Neuen Eintrag in `backend/app/data/questions.py` in die Liste `RAW` einfügen
 (`level`, `line`, `answers`, `correct`, `artist`, `track`, `album`, `year`,
-`fun_fact`), danach `python tools/gen_covers.py` ausführen – der Cover-Name wird
-automatisch aus Artist und Album abgeleitet und die Grafik erzeugt. Verwaiste
-Cover werden dabei entfernt, der Ordner bleibt sauber.
+`source`). Danach:
+
+```bash
+python tools/gen_covers.py        # erzeugt das Cover
+python tools/verify_sources.py    # belegt die Zeile gegen die Quelle
+python -m pytest tests -q
+```
+
+**Regel:** Die Zeile muss buchstabengetreu von der unter `source` angegebenen
+Seite stammen. Nichts aus dem Gedächtnis zitieren – `verify_sources.py` fällt
+sonst durch. Der Cover-Name wird automatisch aus Artist und Album abgeleitet,
+verwaiste Cover werden entfernt.
 
 Echte Cover können jederzeit als `backend/static/covers/<artist>--<album>.svg`
 hinterlegt werden; der Generator überschreibt sie allerdings beim nächsten Lauf.

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Banger leben kürzer von Farid Bang">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(103 0.5 0.5)">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#0b3d91"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="62.4" cy="94.2" r="155.2" fill="none" stroke="#ff2e88" stroke-width="8.8" opacity="0.22"/>
+    <circle cx="29.4" cy="493.6" r="124.5" fill="none" stroke="#ff2e88" stroke-width="3.6" opacity="0.52"/>
+    <circle cx="129.2" cy="152.8" r="175.6" fill="none" stroke="#ff2e88" stroke-width="5.5" opacity="0.33"/>
+    <circle cx="142.9" cy="149.6" r="75.6" fill="none" stroke="#ff2e88" stroke-width="5.1" opacity="0.49"/>
+    <circle cx="125.3" cy="309.4" r="111.8" fill="none" stroke="#ff2e88" stroke-width="4.5" opacity="0.30"/>
+    <circle cx="108.8" cy="401.6" r="186.2" fill="none" stroke="#ff2e88" stroke-width="6.8" opacity="0.38"/>
+    <circle cx="463.7" cy="380.3" r="154.0" fill="none" stroke="#ff2e88" stroke-width="7.8" opacity="0.37"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="380" width="600" height="220" fill="#000" opacity="0.58"/>
+    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ff2e88">FARID BANG</text>
+    <text x="52" y="480" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">BANGER LEBEN</tspan>
+      <tspan x="52" dy="58">KÜRZER</tspan>
+    </text>
+    <text x="548" y="426" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2011</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ff2e88" stroke-width="6" opacity="0.9"/>
+</svg>

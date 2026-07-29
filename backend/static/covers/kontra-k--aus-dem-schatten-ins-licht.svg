@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Aus dem Schatten ins Licht von Kontra K">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(38 0.5 0.5)">
+      <stop offset="0%" stop-color="#ffd200"/>
+      <stop offset="100%" stop-color="#ff5f00"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <polygon points="204.2,532.0 388.5,711.4 277.7,378.5" fill="none" stroke="#2b0a3d" stroke-width="5.5" opacity="0.28"/>
+    <polygon points="213.4,703.9 -12.4,410.0 -53.7,452.3" fill="none" stroke="#2b0a3d" stroke-width="5.1" opacity="0.25"/>
+    <polygon points="259.2,270.0 297.8,431.7 294.9,429.4" fill="none" stroke="#2b0a3d" stroke-width="3.9" opacity="0.30"/>
+    <polygon points="206.6,78.5 275.8,168.8 98.2,278.7" fill="none" stroke="#2b0a3d" stroke-width="4.6" opacity="0.28"/>
+    <polygon points="141.3,109.5 128.3,131.5 336.5,236.5" fill="none" stroke="#2b0a3d" stroke-width="5.2" opacity="0.20"/>
+    <polygon points="371.1,216.2 99.9,31.6 375.5,213.8" fill="none" stroke="#2b0a3d" stroke-width="3.1" opacity="0.50"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="380" width="600" height="220" fill="#000" opacity="0.58"/>
+    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ffd200">KONTRA K</text>
+    <text x="52" y="480" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">AUS DEM SCHATTEN</tspan>
+      <tspan x="52" dy="58">INS LICHT</tspan>
+    </text>
+    <text x="548" y="426" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2015</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#2b0a3d" stroke-width="6" opacity="0.9"/>
+</svg>

@@ -22,7 +22,7 @@ class Question(BaseModel):
     album: str
     year: int
     cover: str
-    fun_fact: str
+    source_url: str
 
 
 class PublicQuestion(BaseModel):
@@ -50,7 +50,7 @@ class SongReveal(BaseModel):
     album: str
     year: int
     cover_url: str
-    fun_fact: str
+    source_url: str
 
 
 class LifelineState(BaseModel):
