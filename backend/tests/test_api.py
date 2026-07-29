@@ -30,10 +30,14 @@ def new_game() -> dict:
 
 
 # --------------------------------------------------------------- Datenqualitaet
-def test_katalog_hat_drei_fragen_pro_level():
-    assert len(QUESTIONS) == 45
+def test_katalog_hat_genug_fragen_pro_level():
+    """Jede Stufe braucht mehrere Fragen, damit Runden sich unterscheiden."""
+    assert len(QUESTIONS) >= 45
     for level in range(1, MAX_LEVEL + 1):
-        assert len(QUESTIONS_BY_LEVEL[level]) == 3, f"Level {level}"
+        assert len(QUESTIONS_BY_LEVEL[level]) >= 3, f"Level {level}"
+
+    counts = {len(v) for v in QUESTIONS_BY_LEVEL.values()}
+    assert len(counts) == 1, f"Stufen ungleich gefuellt: {counts}"
 
 
 def test_jede_frage_hat_drei_eindeutige_antworten():

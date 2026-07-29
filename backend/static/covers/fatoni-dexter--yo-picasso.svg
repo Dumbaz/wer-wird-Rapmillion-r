@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Yo, Picasso von Fatoni &amp; Dexter">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(162 0.5 0.5)">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#0b3d91"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <polygon points="-63.8,329.7 78.6,369.2 -55.4,14.7" fill="none" stroke="#ff2e88" stroke-width="2.7" opacity="0.24"/>
+    <polygon points="324.5,112.6 204.0,109.7 220.6,175.1" fill="none" stroke="#ff2e88" stroke-width="4.0" opacity="0.23"/>
+    <polygon points="520.3,145.5 413.5,255.5 396.6,224.4" fill="none" stroke="#ff2e88" stroke-width="6.2" opacity="0.47"/>
+    <polygon points="144.4,433.4 370.3,225.9 158.5,440.4" fill="none" stroke="#ff2e88" stroke-width="4.7" opacity="0.30"/>
+    <polygon points="438.9,218.4 336.1,275.9 251.2,183.7" fill="none" stroke="#ff2e88" stroke-width="2.9" opacity="0.30"/>
+    <polygon points="-96.6,610.3 -13.1,703.1 168.9,575.4" fill="none" stroke="#ff2e88" stroke-width="4.7" opacity="0.23"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ff2e88">FATONI &amp; DEXTER</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">YO, PICASSO</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2015</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ff2e88" stroke-width="6" opacity="0.9"/>
+</svg>

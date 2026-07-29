@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Neopunk von Prinz Pi">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(49 0.5 0.5)">
+      <stop offset="0%" stop-color="#00c2ff"/>
+      <stop offset="100%" stop-color="#7a00cc"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="198.8" cy="56.1" r="94.9" fill="none" stroke="#fffb00" stroke-width="5.6" opacity="0.53"/>
+    <circle cx="261.3" cy="126.5" r="71.2" fill="none" stroke="#fffb00" stroke-width="2.3" opacity="0.21"/>
+    <circle cx="303.5" cy="423.1" r="200.0" fill="none" stroke="#fffb00" stroke-width="3.1" opacity="0.47"/>
+    <circle cx="462.1" cy="18.3" r="62.7" fill="none" stroke="#fffb00" stroke-width="4.2" opacity="0.45"/>
+    <circle cx="249.6" cy="39.8" r="199.1" fill="none" stroke="#fffb00" stroke-width="5.1" opacity="0.54"/>
+    <circle cx="382.7" cy="213.3" r="105.2" fill="none" stroke="#fffb00" stroke-width="5.4" opacity="0.42"/>
+    <circle cx="140.4" cy="85.3" r="136.1" fill="none" stroke="#fffb00" stroke-width="7.7" opacity="0.53"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#fffb00">PRINZ PI</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">NEOPUNK</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2008</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#fffb00" stroke-width="6" opacity="0.9"/>
+</svg>

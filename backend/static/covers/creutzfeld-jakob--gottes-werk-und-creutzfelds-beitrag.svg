@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Gottes Werk und Creutzfelds Beitrag von Creutzfeld &amp; Jakob">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(22 0.5 0.5)">
+      <stop offset="0%" stop-color="#ffd200"/>
+      <stop offset="100%" stop-color="#ff5f00"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <rect x="-600.0" y="-600" width="21.3" height="1800" fill="#2b0a3d" opacity="0.29" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-450.0" y="-600" width="55.0" height="1800" fill="#2b0a3d" opacity="0.10" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-300.0" y="-600" width="45.0" height="1800" fill="#2b0a3d" opacity="0.15" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-150.0" y="-600" width="16.6" height="1800" fill="#2b0a3d" opacity="0.34" transform="rotate(28 300.0 300.0)"/>
+    <rect x="0.0" y="-600" width="28.3" height="1800" fill="#2b0a3d" opacity="0.27" transform="rotate(28 300.0 300.0)"/>
+    <rect x="150.0" y="-600" width="36.4" height="1800" fill="#2b0a3d" opacity="0.33" transform="rotate(28 300.0 300.0)"/>
+    <rect x="300.0" y="-600" width="31.2" height="1800" fill="#2b0a3d" opacity="0.13" transform="rotate(28 300.0 300.0)"/>
+    <rect x="450.0" y="-600" width="54.7" height="1800" fill="#2b0a3d" opacity="0.12" transform="rotate(28 300.0 300.0)"/>
+    <rect x="600.0" y="-600" width="22.5" height="1800" fill="#2b0a3d" opacity="0.25" transform="rotate(28 300.0 300.0)"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="322" width="600" height="278" fill="#000" opacity="0.58"/>
+    <text x="52" y="368" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ffd200">CREUTZFELD &amp; JAKOB</text>
+    <text x="52" y="422" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">GOTTES WERK UND</tspan>
+      <tspan x="52" dy="58">CREUTZFELDS</tspan>
+      <tspan x="52" dy="58">BEITRAG</tspan>
+    </text>
+    <text x="548" y="368" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2000</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#2b0a3d" stroke-width="6" opacity="0.9"/>
+</svg>

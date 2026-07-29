@@ -16,7 +16,7 @@ Albumcover eingeblendet.
 |---|---|
 | 15 Stufen | Von 50 € bis 1.000.000 €, Schwierigkeit steigt kontinuierlich |
 | Sicherheitsstufen | Bei 500 € (Stufe 5) und 16.000 € (Stufe 10) |
-| 45 Fragen | 3 pro Stufe, pro Runde zufällig gezogen und gemischt |
+| 75 Fragen | 5 pro Stufe, pro Runde zufällig gezogen und gemischt |
 | Belegte Zitate | Jede Zeile ist wörtlich gegen ihre Genius-Quelle verifiziert |
 | 3 Joker | Fifty-Fifty, Publikumsjoker, Skip |
 | Aussteigen | Gewinn jederzeit ab Stufe 2 sichern |
@@ -100,9 +100,11 @@ Zeile dort nicht wörtlich auffindbar ist:
 
 ```bash
 cd backend
-python tools/verify_sources.py          # alle Einträge
+python tools/verify_sources.py          # alle 75 Einträge
 python tools/verify_sources.py q003     # einzelne ID
 ```
+
+Aktueller Stand: **75/75 Zeilen wörtlich belegt.**
 
 Dieses Skript existiert aus gutem Grund: Eine frühere Fassung des Katalogs
 enthielt 43 von 45 **frei erfundenen** Zeilen sowie zahlreiche falsche Alben und
@@ -183,5 +185,28 @@ hinterlegt werden; der Generator überschreibt sie allerdings beim nächsten Lau
 ## Rechtliches
 
 Es werden ausschließlich kurze Zitatfragmente im Rahmen des Zitatrechts
-(§ 51 UrhG) verwendet. Die Albumcover sind eigens generierte SVG-Grafiken und
-keine Reproduktionen der Originalcover.
+(§ 51 UrhG) verwendet, jeweils mit Quellenangabe und Link zum vollständigen
+Songtext.
+
+### Warum generierte Cover statt echter Albumcover?
+
+Die Frage, ob echte Cover über Wikimedia bezogen werden können, wurde geprüft.
+Das Ergebnis: **nein.**
+
+| Quelle | Befund |
+|---|---|
+| Wikimedia Commons | Verbietet Cover-Scans strukturell. Erlaubt sind nur frei lizenzierte Werke; „album/CD covers" sind ausdrücklich als unzulässig gelistet. Von 12 geprüften Alben waren nur 4 vorhanden – Sonderfreigaben von Aggro Berlin und Selfmade Records. |
+| Deutsche Wikipedia | Hat keine Fair-Use-Ausnahme. Nicht-freie Cover sind dort generell unzulässig. |
+| Englische Wikipedia | Hostet Cover lokal unter US-Fair-Use. Diese Dateien bleiben voll geschützt, es wird **keine** Weiterlizenz erteilt – eine Nutzung in dieser App wäre rechtswidrig, zumal das deutsche UrhG kein Fair Use kennt. |
+
+Deshalb bleibt es bei den generierten SVGs in `backend/static/covers/`.
+
+**Legale Alternative, falls echte Bilder gewünscht sind:** Für praktisch alle
+Künstler existieren auf Commons frei lizenzierte **Fotos** (CC BY-SA), z. B.
+Live- und Pressebilder. Damit ließe sich das Reveal statt mit dem Cover mit
+einem Künstlerporträt gestalten – Pflicht wären Urhebernennung, Lizenzangabe
+und Lizenz-Link am Bild. Zu beachten wäre zusätzlich das Recht am eigenen Bild
+(§ 22 KUG), sobald die App kommerziell genutzt wird.
+
+Der andere saubere Weg wären offizielle Musik-APIs (Spotify, Apple Music,
+Cover Art Archive) unter deren Nutzungsbedingungen.
