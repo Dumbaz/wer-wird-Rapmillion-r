@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Erfolg ist kein Glueck von Kontra K">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(216 0.5 0.5)">
+      <stop offset="0%" stop-color="#00c2ff"/>
+      <stop offset="100%" stop-color="#7a00cc"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <polygon points="45.1,528.2 179.5,635.9 98.9,317.3" fill="none" stroke="#fffb00" stroke-width="2.9" opacity="0.20"/>
+    <polygon points="568.6,344.2 513.8,232.6 306.0,390.5" fill="none" stroke="#fffb00" stroke-width="4.8" opacity="0.29"/>
+    <polygon points="51.2,-10.9 245.9,124.2 179.3,-124.1" fill="none" stroke="#fffb00" stroke-width="2.5" opacity="0.31"/>
+    <polygon points="199.2,232.9 301.0,335.0 364.5,296.6" fill="none" stroke="#fffb00" stroke-width="2.7" opacity="0.40"/>
+    <polygon points="291.7,480.2 480.2,477.4 496.1,230.7" fill="none" stroke="#fffb00" stroke-width="3.9" opacity="0.18"/>
+    <polygon points="84.6,81.2 87.0,46.0 89.1,98.0" fill="none" stroke="#fffb00" stroke-width="6.3" opacity="0.20"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="380" width="600" height="220" fill="#000" opacity="0.58"/>
+    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#fffb00">KONTRA K</text>
+    <text x="52" y="480" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">ERFOLG IST KEIN</tspan>
+      <tspan x="52" dy="58">GLUECK</tspan>
+    </text>
+    <text x="548" y="426" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2016</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#fffb00" stroke-width="6" opacity="0.9"/>
+</svg>

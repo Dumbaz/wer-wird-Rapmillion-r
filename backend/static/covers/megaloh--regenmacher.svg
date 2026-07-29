@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Regenmacher von Megaloh">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(248 0.5 0.5)">
+      <stop offset="0%" stop-color="#ff004d"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="48.0" cy="495.6" r="202.2" fill="none" stroke="#ffb800" stroke-width="3.9" opacity="0.44"/>
+    <circle cx="519.4" cy="133.0" r="194.4" fill="none" stroke="#ffb800" stroke-width="7.1" opacity="0.39"/>
+    <circle cx="383.6" cy="405.1" r="92.5" fill="none" stroke="#ffb800" stroke-width="4.7" opacity="0.16"/>
+    <circle cx="326.2" cy="386.6" r="76.9" fill="none" stroke="#ffb800" stroke-width="4.4" opacity="0.47"/>
+    <circle cx="71.8" cy="426.5" r="52.0" fill="none" stroke="#ffb800" stroke-width="8.8" opacity="0.20"/>
+    <circle cx="145.9" cy="590.1" r="206.4" fill="none" stroke="#ffb800" stroke-width="3.9" opacity="0.32"/>
+    <circle cx="417.9" cy="418.3" r="71.3" fill="none" stroke="#ffb800" stroke-width="7.4" opacity="0.42"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ffb800">MEGALOH</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">REGENMACHER</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2016</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ffb800" stroke-width="6" opacity="0.9"/>
+</svg>

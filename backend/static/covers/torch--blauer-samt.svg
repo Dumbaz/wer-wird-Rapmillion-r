@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Blauer Samt von Torch">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(196 0.5 0.5)">
+      <stop offset="0%" stop-color="#8f00ff"/>
+      <stop offset="100%" stop-color="#ff00c8"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <polygon points="218.2,553.3 214.6,536.2 23.9,594.3" fill="none" stroke="#00ffe0" stroke-width="5.9" opacity="0.44"/>
+    <polygon points="174.1,241.7 103.7,393.3 219.2,463.3" fill="none" stroke="#00ffe0" stroke-width="6.2" opacity="0.49"/>
+    <polygon points="505.2,529.9 568.9,481.8 523.2,499.6" fill="none" stroke="#00ffe0" stroke-width="4.6" opacity="0.48"/>
+    <polygon points="432.4,411.3 450.2,390.2 379.2,425.8" fill="none" stroke="#00ffe0" stroke-width="4.8" opacity="0.20"/>
+    <polygon points="217.6,288.0 91.1,314.3 199.8,315.8" fill="none" stroke="#00ffe0" stroke-width="3.4" opacity="0.48"/>
+    <polygon points="369.8,495.0 492.2,253.7 284.1,506.3" fill="none" stroke="#00ffe0" stroke-width="3.0" opacity="0.47"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#00ffe0">TORCH</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">BLAUER SAMT</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2000</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#00ffe0" stroke-width="6" opacity="0.9"/>
+</svg>

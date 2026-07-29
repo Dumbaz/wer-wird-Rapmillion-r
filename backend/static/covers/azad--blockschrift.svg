@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Blockschrift von Azad">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(205 0.5 0.5)">
+      <stop offset="0%" stop-color="#8f00ff"/>
+      <stop offset="100%" stop-color="#ff00c8"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="124.6" cy="285.7" r="90.0" fill="none" stroke="#00ffe0" stroke-width="8.9" opacity="0.42"/>
+    <circle cx="270.5" cy="102.6" r="156.6" fill="none" stroke="#00ffe0" stroke-width="4.3" opacity="0.41"/>
+    <circle cx="567.0" cy="85.1" r="154.9" fill="none" stroke="#00ffe0" stroke-width="4.9" opacity="0.43"/>
+    <circle cx="33.0" cy="230.9" r="86.7" fill="none" stroke="#00ffe0" stroke-width="5.4" opacity="0.19"/>
+    <circle cx="25.1" cy="89.5" r="183.8" fill="none" stroke="#00ffe0" stroke-width="2.6" opacity="0.53"/>
+    <circle cx="553.2" cy="411.7" r="64.2" fill="none" stroke="#00ffe0" stroke-width="3.7" opacity="0.37"/>
+    <circle cx="274.8" cy="389.4" r="176.8" fill="none" stroke="#00ffe0" stroke-width="5.4" opacity="0.25"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#00ffe0">AZAD</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">BLOCKSCHRIFT</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2007</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#00ffe0" stroke-width="6" opacity="0.9"/>
+</svg>

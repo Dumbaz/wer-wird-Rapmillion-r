@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Corage von Cora E.">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(203 0.5 0.5)">
+      <stop offset="0%" stop-color="#8f00ff"/>
+      <stop offset="100%" stop-color="#ff00c8"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="25.3" cy="247.3" r="75.7" fill="none" stroke="#00ffe0" stroke-width="7.6" opacity="0.20"/>
+    <circle cx="17.4" cy="358.5" r="133.8" fill="none" stroke="#00ffe0" stroke-width="5.1" opacity="0.48"/>
+    <circle cx="261.1" cy="217.2" r="174.7" fill="none" stroke="#00ffe0" stroke-width="8.7" opacity="0.23"/>
+    <circle cx="357.2" cy="8.5" r="150.6" fill="none" stroke="#00ffe0" stroke-width="7.5" opacity="0.40"/>
+    <circle cx="593.8" cy="132.3" r="130.4" fill="none" stroke="#00ffe0" stroke-width="4.8" opacity="0.40"/>
+    <circle cx="231.9" cy="46.6" r="106.7" fill="none" stroke="#00ffe0" stroke-width="8.3" opacity="0.26"/>
+    <circle cx="15.6" cy="230.6" r="209.9" fill="none" stroke="#00ffe0" stroke-width="6.5" opacity="0.41"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#00ffe0">CORA E.</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">CORAGE</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">1996</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#00ffe0" stroke-width="6" opacity="0.9"/>
+</svg>

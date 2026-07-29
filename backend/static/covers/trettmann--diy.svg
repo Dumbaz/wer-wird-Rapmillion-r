@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="DIY von Trettmann">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(197 0.5 0.5)">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#0b3d91"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <rect x="-600.0" y="-600" width="52.9" height="1800" fill="#ff2e88" opacity="0.26" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-450.0" y="-600" width="15.1" height="1800" fill="#ff2e88" opacity="0.13" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-300.0" y="-600" width="28.9" height="1800" fill="#ff2e88" opacity="0.18" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-150.0" y="-600" width="23.7" height="1800" fill="#ff2e88" opacity="0.34" transform="rotate(28 300.0 300.0)"/>
+    <rect x="0.0" y="-600" width="19.2" height="1800" fill="#ff2e88" opacity="0.17" transform="rotate(28 300.0 300.0)"/>
+    <rect x="150.0" y="-600" width="35.8" height="1800" fill="#ff2e88" opacity="0.31" transform="rotate(28 300.0 300.0)"/>
+    <rect x="300.0" y="-600" width="53.7" height="1800" fill="#ff2e88" opacity="0.18" transform="rotate(28 300.0 300.0)"/>
+    <rect x="450.0" y="-600" width="31.6" height="1800" fill="#ff2e88" opacity="0.32" transform="rotate(28 300.0 300.0)"/>
+    <rect x="600.0" y="-600" width="22.6" height="1800" fill="#ff2e88" opacity="0.14" transform="rotate(28 300.0 300.0)"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ff2e88">TRETTMANN</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">DIY</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2017</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ff2e88" stroke-width="6" opacity="0.9"/>
+</svg>
