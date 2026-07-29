@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Innere Sicherheit von Curse">
   <defs>
     <linearGradient id="bg" gradientTransform="rotate(25 0.5 0.5)">
-      <stop offset="0%" stop-color="#f2f2f2"/>
-      <stop offset="100%" stop-color="#111111"/>
+      <stop offset="0%" stop-color="#ff6a00"/>
+      <stop offset="100%" stop-color="#c2185b"/>
     </linearGradient>
     <filter id="grain">
       <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
@@ -12,23 +12,23 @@
   </defs>
   <g clip-path="url(#clip)">
     <rect width="600" height="600" fill="url(#bg)"/>
-    <rect x="-600.0" y="-600" width="37.2" height="1800" fill="#ff2e88" opacity="0.34" transform="rotate(28 300.0 300.0)"/>
-    <rect x="-450.0" y="-600" width="40.0" height="1800" fill="#ff2e88" opacity="0.15" transform="rotate(28 300.0 300.0)"/>
-    <rect x="-300.0" y="-600" width="23.3" height="1800" fill="#ff2e88" opacity="0.16" transform="rotate(28 300.0 300.0)"/>
-    <rect x="-150.0" y="-600" width="18.8" height="1800" fill="#ff2e88" opacity="0.29" transform="rotate(28 300.0 300.0)"/>
-    <rect x="0.0" y="-600" width="48.9" height="1800" fill="#ff2e88" opacity="0.31" transform="rotate(28 300.0 300.0)"/>
-    <rect x="150.0" y="-600" width="40.4" height="1800" fill="#ff2e88" opacity="0.34" transform="rotate(28 300.0 300.0)"/>
-    <rect x="300.0" y="-600" width="44.1" height="1800" fill="#ff2e88" opacity="0.18" transform="rotate(28 300.0 300.0)"/>
-    <rect x="450.0" y="-600" width="48.9" height="1800" fill="#ff2e88" opacity="0.15" transform="rotate(28 300.0 300.0)"/>
-    <rect x="600.0" y="-600" width="44.0" height="1800" fill="#ff2e88" opacity="0.38" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-600.0" y="-600" width="37.2" height="1800" fill="#ffe600" opacity="0.34" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-450.0" y="-600" width="40.0" height="1800" fill="#ffe600" opacity="0.15" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-300.0" y="-600" width="23.3" height="1800" fill="#ffe600" opacity="0.16" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-150.0" y="-600" width="18.8" height="1800" fill="#ffe600" opacity="0.29" transform="rotate(28 300.0 300.0)"/>
+    <rect x="0.0" y="-600" width="48.9" height="1800" fill="#ffe600" opacity="0.31" transform="rotate(28 300.0 300.0)"/>
+    <rect x="150.0" y="-600" width="40.4" height="1800" fill="#ffe600" opacity="0.34" transform="rotate(28 300.0 300.0)"/>
+    <rect x="300.0" y="-600" width="44.1" height="1800" fill="#ffe600" opacity="0.18" transform="rotate(28 300.0 300.0)"/>
+    <rect x="450.0" y="-600" width="48.9" height="1800" fill="#ffe600" opacity="0.15" transform="rotate(28 300.0 300.0)"/>
+    <rect x="600.0" y="-600" width="44.0" height="1800" fill="#ffe600" opacity="0.38" transform="rotate(28 300.0 300.0)"/>
     <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
     <rect x="0" y="380" width="600" height="220" fill="#000" opacity="0.58"/>
-    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ff2e88">CURSE</text>
+    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ffe600">CURSE</text>
     <text x="52" y="480" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
       <tspan x="52" dy="0">INNERE</tspan>
       <tspan x="52" dy="58">SICHERHEIT</tspan>
     </text>
     <text x="548" y="426" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2003</text>
   </g>
-  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ff2e88" stroke-width="6" opacity="0.9"/>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ffe600" stroke-width="6" opacity="0.9"/>
 </svg>

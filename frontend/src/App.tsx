@@ -22,15 +22,29 @@ import { GameOver } from "./components/GameOver";
 import { Ladder } from "./components/Ladder";
 import { Lifelines } from "./components/Lifelines";
 import { StartScreen } from "./components/StartScreen";
-import type { AnswerResult, GameState, Lifeline } from "./types";
+import type { AnswerResult, GameState, Lifeline, PublicQuestion } from "./types";
 
 const SESSION_KEY = "rapquiz.session";
 const SUSPENSE_MS = 1600;
+
+/**
+ * Bebas Neue ist eine reine Versalienschrift ohne Versal-ß. Im Versalsatz wird
+ * ß korrekterweise zu SS aufgeloest (DIN 5008), sonst steht ein kleines ß
+ * mitten in den Grossbuchstaben.
+ */
+const forCaps = (text: string) => text.replace(/ß/g, "SS");
 
 type Phase = "idle" | "playing" | "suspense" | "revealed" | "finished";
 
 export default function App() {
   const [state, setState] = useState<GameState | null>(null);
+  /**
+   * Die gerade angezeigte Frage. Bewusst getrennt von `state.question`:
+   * Nach einer falschen Antwort (oder dem Sieg auf Stufe 15) liefert der Server
+   * `question: null`. Ohne diese Kopie wuerde die Stage inklusive Cover-Reveal
+   * sofort verschwinden.
+   */
+  const [view, setView] = useState<PublicQuestion | null>(null);
   const [phase, setPhase] = useState<Phase>("idle");
   const [selected, setSelected] = useState<number | null>(null);
   const [result, setResult] = useState<AnswerResult | null>(null);
@@ -65,6 +79,7 @@ export default function App() {
     (next: GameState) => {
       setState(next);
       if (next.status === "running") {
+        if (next.question) setView(next.question);
         setPhase("playing");
         localStorage.setItem(SESSION_KEY, next.session_id);
       } else {
@@ -82,6 +97,7 @@ export default function App() {
       if (err.status === 404) {
         localStorage.removeItem(SESSION_KEY);
         setState(null);
+        setView(null);
         setPhase("idle");
       }
     } else {
@@ -131,11 +147,12 @@ export default function App() {
           setState(answer.state);
           setPhase("revealed");
 
+          const clearedLevel = state.level;
           if (!answer.correct) {
             playWrong();
           } else if (answer.state.status === "won") {
             playMillionaire();
-          } else if (answer.state.question?.safe_haven || answer.state.level - 1 === 5 || answer.state.level - 1 === 10) {
+          } else if (clearedLevel === 5 || clearedLevel === 10) {
             playLevelUp();
           } else {
             playCorrect();
@@ -181,14 +198,14 @@ export default function App() {
         } else {
           resetQuestionUi();
         }
-        setState(res.state);
+        applyState(res.state);
       } catch (err) {
         handleError(err);
       } finally {
         setBusy(false);
       }
     },
-    [busy, handleError, phase, resetQuestionUi, state],
+    [applyState, busy, handleError, phase, resetQuestionUi, state],
   );
 
   const cashOut = useCallback(async () => {
@@ -223,7 +240,7 @@ export default function App() {
     return "idle";
   };
 
-  const question = state?.question ?? null;
+  const question = view;
   const showGame = state !== null && phase !== "idle";
   const isFinished = phase === "finished";
 
@@ -268,7 +285,7 @@ export default function App() {
             <GameOver
               status={state.status}
               banked={state.banked}
-              reachedLevel={state.status === "won" ? 15 : Math.max(1, state.level - (state.status === "lost" ? 0 : 1))}
+              reachedLevel={state.status === "won" ? 15 : Math.max(0, state.level - 1)}
               onRestart={startGame}
             />
           )}
@@ -283,7 +300,7 @@ export default function App() {
                   </span>
                   <span className="question__prize">{formatEuro(question.prize)}</span>
                 </div>
-                <blockquote className="question__line">„{question.line}“</blockquote>
+                <blockquote className="question__line">„{forCaps(question.line)}“</blockquote>
                 <p className="question__prompt">Von welchem Künstler stammt diese Line?</p>
               </div>
 

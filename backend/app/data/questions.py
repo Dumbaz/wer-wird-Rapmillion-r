@@ -1,6 +1,6 @@
 """Fragenkatalog: 15 Level x 3 Fragen.
 
-Rechtlicher Hinweis: Es werden ausschliesslich kurze Zitatfragmente im Rahmen
+Rechtlicher Hinweis: Es werden ausschließlich kurze Zitatfragmente im Rahmen
 des Zitatrechts (Paragraph 51 UrhG) verwendet. Die Albumcover sind eigens
 generierte SVG-Grafiken und keine Reproduktionen der Originalcover.
 """
@@ -20,18 +20,18 @@ RAW: list[dict] = [
         "track": "Neymar",
         "album": "Berlin lebt",
         "year": 2018,
-        "fun_fact": "Capital Bra stellte 2018 den Rekord fuer die meisten Nummer-eins-Singles innerhalb eines Jahres in Deutschland auf.",
+        "fun_fact": "Capital Bra stellte 2018 den Rekord für die meisten Nummer-eins-Singles innerhalb eines Jahres in Deutschland auf.",
     },
     {
         "level": 1,
-        "line": "Ein Teil von mir ist immer noch da draussen auf der Strasse",
+        "line": "Ein Teil von mir ist immer noch da draußen auf der Straße",
         "answers": ["Sido", "Fler", "Massiv"],
         "correct": 0,
         "artist": "Sido",
         "track": "Ein Teil von mir",
         "album": "Ich und meine Maske",
         "year": 2008,
-        "fun_fact": "Sido legte auf diesem Album seine silberne Totenkopfmaske endgueltig ab.",
+        "fun_fact": "Sido legte auf diesem Album seine silberne Totenkopfmaske endgültig ab.",
     },
     {
         "level": 1,
@@ -42,7 +42,7 @@ RAW: list[dict] = [
         "track": "Mein Block",
         "album": "Maske",
         "year": 2004,
-        "fun_fact": "Der Track machte das Berliner Maerkische Viertel bundesweit bekannt.",
+        "fun_fact": "Der Track machte das Berliner Märkische Viertel bundesweit bekannt.",
     },
     # ------------------------------------------------------------------ L2
     {
@@ -54,16 +54,16 @@ RAW: list[dict] = [
         "track": "Chabos wissen wer der Babo ist",
         "album": "Blockplatin",
         "year": 2012,
-        "fun_fact": "Babo wurde 2013 zum Jugendwort des Jahres gewaehlt.",
+        "fun_fact": "Babo wurde 2013 zum Jugendwort des Jahres gewählt.",
     },
     {
         "level": 2,
-        "line": "Auf die harte Tour hab ich gelernt, wie das Leben laeuft",
+        "line": "Auf die harte Tour hab ich gelernt, wie das Leben läuft",
         "answers": ["Bushido", "Kool Savas", "Azad"],
         "correct": 0,
         "artist": "Bushido",
         "track": "Alles wird gut",
-        "album": "Von der Skyline zum Bordstein zurueck",
+        "album": "Von der Skyline zum Bordstein zurück",
         "year": 2003,
         "fun_fact": "Das Album gilt als kommerzieller Durchbruch des Berliner Labels ersguterjunge.",
     },
@@ -88,7 +88,7 @@ RAW: list[dict] = [
         "track": "Was hat er gesagt",
         "album": "Wolke 7",
         "year": 2018,
-        "fun_fact": "Gzuz erreichte mit Wolke 7 als erster 187-Solokuenstler Platz eins der Charts.",
+        "fun_fact": "Gzuz erreichte mit Wolke 7 als erster 187-Solokünstler Platz eins der Charts.",
     },
     {
         "level": 3,
@@ -107,22 +107,22 @@ RAW: list[dict] = [
         "answers": ["Kontra K", "Kollegah", "Fard"],
         "correct": 0,
         "artist": "Kontra K",
-        "track": "Erfolg ist kein Glueck",
-        "album": "Erfolg ist kein Glueck",
+        "track": "Erfolg ist kein Glück",
+        "album": "Erfolg ist kein Glück",
         "year": 2016,
-        "fun_fact": "Kontra K verbindet seine Musik konsequent mit Disziplin- und Fitness-Aesthetik.",
+        "fun_fact": "Kontra K verbindet seine Musik konsequent mit Disziplin- und Fitness-Ästhetik.",
     },
     # ------------------------------------------------------------------ L4
     {
         "level": 4,
-        "line": "Mein Herz schlaegt fuer die Strasse, doch die Strasse schlaegt zurueck",
+        "line": "Mein Herz schlägt für die Straße, doch die Straße schlägt zurück",
         "answers": ["Azad", "Massiv", "Automatikk"],
         "correct": 0,
         "artist": "Azad",
         "track": "Prison Break Anstalt",
         "album": "Blockschrift",
         "year": 2007,
-        "fun_fact": "Azad gilt als einer der Pioniere des Frankfurter Strassenraps.",
+        "fun_fact": "Azad gilt als einer der Pioniere des Frankfurter Straßenraps.",
     },
     {
         "level": 4,
@@ -144,7 +144,7 @@ RAW: list[dict] = [
         "track": "Nr. 1",
         "album": "Nr. 1",
         "year": 2015,
-        "fun_fact": "Xatar gruendete nach seiner Haftstrafe das erfolgreiche Label Alles oder Nix Records.",
+        "fun_fact": "Xatar gründete nach seiner Haftstrafe das erfolgreiche Label Alles oder Nix Records.",
     },
     # ------------------------------------------------------------------ L5  (SAFE)
     {
@@ -156,7 +156,7 @@ RAW: list[dict] = [
         "track": "So perfekt",
         "album": "XOXO",
         "year": 2011,
-        "fun_fact": "XOXO war das erste deutsche Rap-Album, das massgeblich Indie-Rock-Einfluesse in den Mainstream trug.",
+        "fun_fact": "XOXO war das erste deutsche Rap-Album, das maßgeblich Indie-Rock-Einflüsse in den Mainstream trug.",
     },
     {
         "level": 5,
@@ -165,9 +165,9 @@ RAW: list[dict] = [
         "correct": 0,
         "artist": "Marteria",
         "track": "Kids",
-        "album": "Zum Glueck in die Zukunft",
+        "album": "Zum Glück in die Zukunft",
         "year": 2010,
-        "fun_fact": "Marteria arbeitete vor seiner Rapkarriere als Model und spielte in der Fussball-Jugendnationalmannschaft.",
+        "fun_fact": "Marteria arbeitete vor seiner Rapkarriere als Model und spielte in der Fußball-Jugendnationalmannschaft.",
     },
     {
         "level": 5,
@@ -178,12 +178,12 @@ RAW: list[dict] = [
         "track": "Easy",
         "album": "Raop",
         "year": 2012,
-        "fun_fact": "Cro trat jahrelang ausschliesslich mit Pandamaske auf, um anonym zu bleiben.",
+        "fun_fact": "Cro trat jahrelang ausschließlich mit Pandamaske auf, um anonym zu bleiben.",
     },
     # ------------------------------------------------------------------ L6
     {
         "level": 6,
-        "line": "Die Wahrheit ist ein Spiegel, der in tausend Scherben faellt",
+        "line": "Die Wahrheit ist ein Spiegel, der in tausend Scherben fällt",
         "answers": ["Prinz Pi", "Curse", "Samy Deluxe"],
         "correct": 0,
         "artist": "Prinz Pi",
@@ -194,14 +194,14 @@ RAW: list[dict] = [
     },
     {
         "level": 6,
-        "line": "Wenn du faellst, dann steh wieder auf",
+        "line": "Wenn du fällst, dann steh wieder auf",
         "answers": ["Curse", "Afrob", "Max Herre"],
         "correct": 0,
         "artist": "Curse",
         "track": "Widerstand",
         "album": "Innere Sicherheit",
         "year": 2003,
-        "fun_fact": "Curse arbeitet heute zusaetzlich als zertifizierter Achtsamkeitscoach.",
+        "fun_fact": "Curse arbeitet heute zusätzlich als zertifizierter Achtsamkeitscoach.",
     },
     {
         "level": 6,
@@ -212,7 +212,7 @@ RAW: list[dict] = [
         "track": "Weck mich auf",
         "album": "Samy Deluxe",
         "year": 2001,
-        "fun_fact": "Weck mich auf gilt als eine der schaerfsten Gesellschaftskritiken im deutschen Rap.",
+        "fun_fact": "Weck mich auf gilt als eine der schärfsten Gesellschaftskritiken im deutschen Rap.",
     },
     # ------------------------------------------------------------------ L7
     {
@@ -235,7 +235,7 @@ RAW: list[dict] = [
         "track": "King",
         "album": "King",
         "year": 2014,
-        "fun_fact": "Kollegah studierte Jura, bevor er sich vollstaendig auf Musik konzentrierte.",
+        "fun_fact": "Kollegah studierte Jura, bevor er sich vollständig auf Musik konzentrierte.",
     },
     {
         "level": 7,
@@ -243,10 +243,10 @@ RAW: list[dict] = [
         "answers": ["Eko Fresh", "Summer Cem", "Manuellsen"],
         "correct": 0,
         "artist": "Eko Fresh",
-        "track": "Quotentuerke",
+        "track": "Quotentürke",
         "album": "Ekrem",
         "year": 2011,
-        "fun_fact": "Eko Fresh veroeffentlichte mit L.O.V.E. eines der laengsten Rap-Storytelling-Stuecke Deutschlands.",
+        "fun_fact": "Eko Fresh veröffentlichte mit L.O.V.E. eines der längsten Rap-Storytelling-Stücke Deutschlands.",
     },
     # ------------------------------------------------------------------ L8
     {
@@ -258,18 +258,18 @@ RAW: list[dict] = [
         "track": "Nachtmensch",
         "album": "Nachtmensch",
         "year": 2016,
-        "fun_fact": "Chefket verbindet Rap regelmaessig mit Soul- und Jazz-Gesang.",
+        "fun_fact": "Chefket verbindet Rap regelmäßig mit Soul- und Jazz-Gesang.",
     },
     {
         "level": 8,
-        "line": "Regen faellt auf Asphalt, ich bleib trotzdem stehen",
+        "line": "Regen fällt auf Asphalt, ich bleib trotzdem stehen",
         "answers": ["Megaloh", "Kaas", "Retrogott"],
         "correct": 0,
         "artist": "Megaloh",
         "track": "Regenmacher",
         "album": "Regenmacher",
         "year": 2016,
-        "fun_fact": "Megaloh gehoert zum Berliner Kollektiv BSMG rund um Musa und Ghanaian Stallion.",
+        "fun_fact": "Megaloh gehört zum Berliner Kollektiv BSMG rund um Musa und Ghanaian Stallion.",
     },
     {
         "level": 8,
@@ -280,7 +280,7 @@ RAW: list[dict] = [
         "track": "Willst du",
         "album": "Triebwerke",
         "year": 2013,
-        "fun_fact": "Alligatoah produziert, rappt und singt saemtliche Parts seiner Songs selbst.",
+        "fun_fact": "Alligatoah produziert, rappt und singt sämtliche Parts seiner Songs selbst.",
     },
     # ------------------------------------------------------------------ L9
     {
@@ -303,11 +303,11 @@ RAW: list[dict] = [
         "track": "Vom Vintage verweht",
         "album": "Vom Vintage verweht",
         "year": 2010,
-        "fun_fact": "Dendemann war bis 2019 Hausmusiker in der TV-Show von Jan Boehmermann.",
+        "fun_fact": "Dendemann war bis 2019 Hausmusiker in der TV-Show von Jan Böhmermann.",
     },
     {
         "level": 9,
-        "line": "Ich hab nichts zu verlieren, ausser meiner Zeit",
+        "line": "Ich hab nichts zu verlieren, außer meiner Zeit",
         "answers": ["Fatoni", "Edgar Wasser", "Juse Ju"],
         "correct": 0,
         "artist": "Fatoni",
@@ -337,7 +337,7 @@ RAW: list[dict] = [
         "track": "Von der Nord",
         "album": "Nordkurve",
         "year": 2013,
-        "fun_fact": "Nate57 gilt als Wegbereiter des Hamburger Strassenraps rund um St. Pauli.",
+        "fun_fact": "Nate57 gilt als Wegbereiter des Hamburger Straßenraps rund um St. Pauli.",
     },
     {
         "level": 10,
@@ -348,13 +348,13 @@ RAW: list[dict] = [
         "track": "Blauer Samt",
         "album": "Blauer Samt",
         "year": 2000,
-        "fun_fact": "Torch war Mitglied von Advanced Chemistry, einer der ersten deutschsprachigen Rapgruppen ueberhaupt.",
+        "fun_fact": "Torch war Mitglied von Advanced Chemistry, einer der ersten deutschsprachigen Rapgruppen überhaupt.",
     },
     # ------------------------------------------------------------------ L11
     {
         "level": 11,
-        "line": "Ich hab einen gruenen Pass mit einem goldenen Adler drauf",
-        "answers": ["Advanced Chemistry", "Fresh Familee", "Rodelheim Hartreim Projekt"],
+        "line": "Ich hab einen grünen Pass mit einem goldenen Adler drauf",
+        "answers": ["Advanced Chemistry", "Fresh Familee", "Rödelheim Hartreim Projekt"],
         "correct": 0,
         "artist": "Advanced Chemistry",
         "track": "Fremd im eigenen Land",
@@ -365,10 +365,10 @@ RAW: list[dict] = [
     {
         "level": 11,
         "line": "Wir bleiben stehen, auch wenn der Rest sich dreht",
-        "answers": ["Absolute Beginner", "Fuenf Sterne deluxe", "Fettes Brot"],
+        "answers": ["Absolute Beginner", "Fünf Sterne deluxe", "Fettes Brot"],
         "correct": 0,
         "artist": "Absolute Beginner",
-        "track": "Fuechse",
+        "track": "Füchse",
         "album": "Blast Action Heroes",
         "year": 2003,
         "fun_fact": "Die Hamburger Beginner gelten als Kern der sogenannten Hamburger Schule des Deutschraps.",
@@ -376,10 +376,10 @@ RAW: list[dict] = [
     {
         "level": 11,
         "line": "Ich hab die Nacht zum Tag gemacht und wieder umgedreht",
-        "answers": ["Fuenf Sterne deluxe", "Dynamite Deluxe", "Deichkind"],
+        "answers": ["Fünf Sterne deluxe", "Dynamite Deluxe", "Deichkind"],
         "correct": 0,
-        "artist": "Fuenf Sterne deluxe",
-        "track": "Dein Herz schlaegt schneller",
+        "artist": "Fünf Sterne deluxe",
+        "track": "Dein Herz schlägt schneller",
         "album": "Sillium",
         "year": 1998,
         "fun_fact": "Sillium gilt als eines der einflussreichsten deutschen Rapalben der 90er Jahre.",
@@ -387,8 +387,8 @@ RAW: list[dict] = [
     # ------------------------------------------------------------------ L12
     {
         "level": 12,
-        "line": "Bring den Beat zurueck, ich bin noch nicht fertig",
-        "answers": ["Dynamite Deluxe", "Blumentopf", "Massive Toene"],
+        "line": "Bring den Beat zurück, ich bin noch nicht fertig",
+        "answers": ["Dynamite Deluxe", "Blumentopf", "Massive Töne"],
         "correct": 0,
         "artist": "Dynamite Deluxe",
         "track": "Ladies and Gentlemen",
@@ -405,18 +405,18 @@ RAW: list[dict] = [
         "track": "Liebe und Hass",
         "album": "Kein Zufall",
         "year": 1997,
-        "fun_fact": "Blumentopf loeste sich 2016 nach 24 Jahren in Originalbesetzung auf.",
+        "fun_fact": "Blumentopf löste sich 2016 nach 24 Jahren in Originalbesetzung auf.",
     },
     {
         "level": 12,
         "line": "Mit Pauken und Trompeten in den Untergang",
-        "answers": ["Massive Toene", "Freundeskreis", "Afrob"],
+        "answers": ["Massive Töne", "Freundeskreis", "Afrob"],
         "correct": 0,
-        "artist": "Massive Toene",
+        "artist": "Massive Töne",
         "track": "Cro-Magnon",
         "album": "Kopfnicker",
         "year": 1996,
-        "fun_fact": "Die Massiven Toene gehoerten zur Stuttgarter Kolchose rund um Freundeskreis.",
+        "fun_fact": "Die Massiven Töne gehörten zur Stuttgarter Kolchose rund um Freundeskreis.",
     },
     # ------------------------------------------------------------------ L13
     {
@@ -428,7 +428,7 @@ RAW: list[dict] = [
         "track": "Esperanto",
         "album": "Esperanto",
         "year": 1999,
-        "fun_fact": "Max Herre benannte das Album nach der Plansprache Esperanto als Symbol fuer Verstaendigung.",
+        "fun_fact": "Max Herre benannte das Album nach der Plansprache Esperanto als Symbol für Verständigung.",
     },
     {
         "level": 13,
@@ -447,7 +447,7 @@ RAW: list[dict] = [
         "answers": ["Cora E.", "Sabrina Setlur", "Pyranja"],
         "correct": 0,
         "artist": "Cora E.",
-        "track": "Schluesselkind",
+        "track": "Schlüsselkind",
         "album": "Corage",
         "year": 1996,
         "fun_fact": "Cora E. gilt als erste bedeutende Rapperin der deutschen Hip-Hop-Szene.",
@@ -462,7 +462,7 @@ RAW: list[dict] = [
         "track": "Gottes Werk und Teufels Beitrag",
         "album": "Gottes Werk und Teufels Beitrag",
         "year": 1999,
-        "fun_fact": "Das Duo aus Bochum praegte den harten, dunklen Sound des deutschen 90er-Untergrunds.",
+        "fun_fact": "Das Duo aus Bochum prägte den harten, dunklen Sound des deutschen 90er-Untergrunds.",
     },
     {
         "level": 14,
@@ -473,18 +473,18 @@ RAW: list[dict] = [
         "track": "Von Abseits",
         "album": "Von Abseits",
         "year": 1999,
-        "fun_fact": "Doppelkopf gehoerte zum Frankfurter Label 360 Records rund um Roey Marquis II.",
+        "fun_fact": "Doppelkopf gehörte zum Frankfurter Label 360 Records rund um Roey Marquis II.",
     },
     {
         "level": 14,
-        "line": "Danke, dass ihr zugehoert habt, jetzt geht nach Hause",
+        "line": "Danke, dass ihr zugehört habt, jetzt geht nach Hause",
         "answers": ["Eins Zwo", "Fettes Brot", "Deichkind"],
         "correct": 0,
         "artist": "Eins Zwo",
         "track": "Danke gut",
-        "album": "Gefaehrliches Halbwissen",
+        "album": "Gefährliches Halbwissen",
         "year": 1999,
-        "fun_fact": "Eins Zwo bestand aus Dendemann und DJ Rabauke und veroeffentlichte nur ein Studioalbum.",
+        "fun_fact": "Eins Zwo bestand aus Dendemann und DJ Rabauke und veröffentlichte nur ein Studioalbum.",
     },
     # ------------------------------------------------------------------ L15
     {
@@ -496,37 +496,43 @@ RAW: list[dict] = [
         "track": "Bonanzarad",
         "album": "Popkiller",
         "year": 1996,
-        "fun_fact": "Aus Fischmob gingen spaeter unter anderem Deichkind und International Pony hervor.",
+        "fun_fact": "Aus Fischmob gingen später unter anderem Deichkind und International Pony hervor.",
     },
     {
         "level": 15,
         "line": "Wir kamen aus dem Nichts und gehen nirgendwohin",
-        "answers": ["Too Strong", "Rodelheim Hartreim Projekt", "Fresh Familee"],
+        "answers": ["Too Strong", "Rödelheim Hartreim Projekt", "Fresh Familee"],
         "correct": 0,
         "artist": "Too Strong",
         "track": "Gestern Heute Morgen",
         "album": "Da Rat Pack",
         "year": 1996,
-        "fun_fact": "Too Strong aus Braunschweig zaehlen zu den Wegbereitern des deutschsprachigen Hardcore-Raps.",
+        "fun_fact": "Too Strong aus Braunschweig zählen zu den Wegbereitern des deutschsprachigen Hardcore-Raps.",
     },
     {
         "level": 15,
-        "line": "Ahmet Gunduz, so heisst der Mann, der hier nichts gilt",
+        "line": "Ahmet Gündüz, so heißt der Mann, der hier nichts gilt",
         "answers": ["Fresh Familee", "Advanced Chemistry", "King Size Terror"],
         "correct": 0,
         "artist": "Fresh Familee",
-        "track": "Ahmet Gunduz",
+        "track": "Ahmet Gündüz",
         "album": "Falsche Politik",
         "year": 1991,
-        "fun_fact": "Ahmet Gunduz von 1991 gilt als erster deutschsprachiger Rapsong mit gesellschaftskritischem Anspruch.",
+        "fun_fact": "Ahmet Gündüz von 1991 gilt als erster deutschsprachiger Rapsong mit gesellschaftskritischem Anspruch.",
     },
 ]
 
 
+TRANSLITERATION = str.maketrans(
+    {"ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss", "é": "e", "è": "e", "à": "a"}
+)
+
+
 def _slug(text: str) -> str:
-    out = []
-    for ch in text.lower():
-        if ch.isalnum():
+    """ASCII-Slug fuer Cover-Dateinamen (Umlaute werden transliteriert)."""
+    out: list[str] = []
+    for ch in text.lower().translate(TRANSLITERATION):
+        if ch.isascii() and ch.isalnum():
             out.append(ch)
         elif out and out[-1] != "-":
             out.append("-")

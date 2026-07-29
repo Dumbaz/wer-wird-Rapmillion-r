@@ -27,9 +27,9 @@ PALETTES: list[tuple[str, str, str]] = [
     ("#00f0ff", "#0b3d91", "#ff2e88"),
     ("#ffd200", "#ff5f00", "#2b0a3d"),
     ("#00ff9d", "#005f56", "#f7ff00"),
-    ("#ff004d", "#1a1a2e", "#ffb800"),
+    ("#ff004d", "#3a0a2e", "#ffb800"),
     ("#8f00ff", "#ff00c8", "#00ffe0"),
-    ("#f2f2f2", "#111111", "#ff2e88"),
+    ("#ff6a00", "#c2185b", "#ffe600"),
     ("#00c2ff", "#7a00cc", "#fffb00"),
 ]
 
@@ -153,6 +153,20 @@ def readable_on_black(hex_color: str, fallback: str) -> str:
     return fallback if luminance(fallback) >= 0.35 else "#ffffff"
 
 
+def fit_artist(artist: str) -> tuple[str, int, int]:
+    """Waehlt Schriftgroesse und Laufweite so, dass der Artist nicht in die
+    Jahreszahl laeuft. Gibt (Text, font_size, letter_spacing) zurueck."""
+    text = artist.upper()
+    available = SIZE - 52 - 52 - 78  # linker/rechter Rand + Platz fuer das Jahr
+    for size, spacing in ((26, 6), (23, 4), (20, 3), (17, 2), (15, 1)):
+        if len(text) * (size * 0.62 + spacing) <= available:
+            return text, size, spacing
+    # Notfall: kuerzen
+    size, spacing = 15, 1
+    max_chars = int(available / (size * 0.62 + spacing))
+    return text[: max(1, max_chars - 1)] + "\u2026", size, spacing
+
+
 def build_svg(artist: str, album: str, year: int) -> str:
     rng = Rng(f"{artist}|{album}")
     c1, c2, accent = rng.pick(PALETTES)
@@ -161,9 +175,7 @@ def build_svg(artist: str, album: str, year: int) -> str:
     mode = rng.next() % 4
 
     album_lines = wrap(album.upper(), 16, 3)
-    artist_line = artist.upper()
-    if len(artist_line) > 22:
-        artist_line = artist_line[:21] + "\u2026"
+    artist_line, artist_size, artist_spacing = fit_artist(artist)
 
     album_svg = "\n      ".join(
         f'<tspan x="52" dy="{0 if i == 0 else 58}">{esc(line)}</tspan>'
@@ -193,7 +205,7 @@ def build_svg(artist: str, album: str, year: int) -> str:
     {geometry(rng, mode, accent)}
     <rect width="{SIZE}" height="{SIZE}" filter="url(#grain)" opacity="0.10"/>
     <rect x="0" y="{band_top}" width="{SIZE}" height="{band_height}" fill="#000" opacity="0.58"/>
-    <text x="52" y="{artist_y}" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="{text_accent}">{esc(artist_line)}</text>
+    <text x="52" y="{artist_y}" font-family="Helvetica, Arial, sans-serif" font-size="{artist_size}" font-weight="700" letter-spacing="{artist_spacing}" fill="{text_accent}">{esc(artist_line)}</text>
     <text x="52" y="{album_y}" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
       {album_svg}
     </text>

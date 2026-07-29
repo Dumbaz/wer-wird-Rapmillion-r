@@ -2,7 +2,7 @@
   <defs>
     <linearGradient id="bg" gradientTransform="rotate(46 0.5 0.5)">
       <stop offset="0%" stop-color="#ff004d"/>
-      <stop offset="100%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#3a0a2e"/>
     </linearGradient>
     <filter id="grain">
       <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>

@@ -75,6 +75,19 @@ Durchlauf bis zur Million, Sicherheitsstufen-Logik, Cash-out, alle drei Joker
 und die Zusicherung, dass die Lösung nie an den Client geht, bevor geantwortet
 wurde.
 
+### Visueller Test
+
+Klickt das Quiz mit Playwright wie ein echter User durch, prüft dabei, ob die
+Albumcover tatsächlich laden, und legt Screenshots in `/tmp/shots` ab:
+
+```bash
+cd backend && uvicorn app.main:app --port 8014 &   # Frontend vorher bauen
+cd frontend && npm run shots
+```
+
+Der Lauf schlägt fehl, sobald ein Cover nicht lädt oder ein Konsolen- bzw.
+Netzwerkfehler auftritt.
+
 ## API
 
 | Methode | Pfad | Zweck |

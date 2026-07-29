@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Palmen aus Plastik von Bonez MC &amp; RAF Camora">
   <defs>
     <linearGradient id="bg" gradientTransform="rotate(196 0.5 0.5)">
-      <stop offset="0%" stop-color="#f2f2f2"/>
-      <stop offset="100%" stop-color="#111111"/>
+      <stop offset="0%" stop-color="#ff6a00"/>
+      <stop offset="100%" stop-color="#c2185b"/>
     </linearGradient>
     <filter id="grain">
       <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
@@ -12,21 +12,21 @@
   </defs>
   <g clip-path="url(#clip)">
     <rect width="600" height="600" fill="url(#bg)"/>
-    <circle cx="532.6" cy="401.5" r="41.7" fill="none" stroke="#ff2e88" stroke-width="5.0" opacity="0.29"/>
-    <circle cx="361.4" cy="250.9" r="66.9" fill="none" stroke="#ff2e88" stroke-width="4.2" opacity="0.51"/>
-    <circle cx="500.3" cy="237.7" r="193.5" fill="none" stroke="#ff2e88" stroke-width="3.9" opacity="0.39"/>
-    <circle cx="166.3" cy="36.7" r="76.0" fill="none" stroke="#ff2e88" stroke-width="6.9" opacity="0.49"/>
-    <circle cx="92.3" cy="511.9" r="200.9" fill="none" stroke="#ff2e88" stroke-width="3.1" opacity="0.45"/>
-    <circle cx="62.4" cy="581.3" r="180.7" fill="none" stroke="#ff2e88" stroke-width="7.5" opacity="0.43"/>
-    <circle cx="596.9" cy="355.0" r="138.1" fill="none" stroke="#ff2e88" stroke-width="8.6" opacity="0.42"/>
+    <circle cx="532.6" cy="401.5" r="41.7" fill="none" stroke="#ffe600" stroke-width="5.0" opacity="0.29"/>
+    <circle cx="361.4" cy="250.9" r="66.9" fill="none" stroke="#ffe600" stroke-width="4.2" opacity="0.51"/>
+    <circle cx="500.3" cy="237.7" r="193.5" fill="none" stroke="#ffe600" stroke-width="3.9" opacity="0.39"/>
+    <circle cx="166.3" cy="36.7" r="76.0" fill="none" stroke="#ffe600" stroke-width="6.9" opacity="0.49"/>
+    <circle cx="92.3" cy="511.9" r="200.9" fill="none" stroke="#ffe600" stroke-width="3.1" opacity="0.45"/>
+    <circle cx="62.4" cy="581.3" r="180.7" fill="none" stroke="#ffe600" stroke-width="7.5" opacity="0.43"/>
+    <circle cx="596.9" cy="355.0" r="138.1" fill="none" stroke="#ffe600" stroke-width="8.6" opacity="0.42"/>
     <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
     <rect x="0" y="380" width="600" height="220" fill="#000" opacity="0.58"/>
-    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ff2e88">BONEZ MC &amp; RAF CAMORA</text>
+    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="4" fill="#ffe600">BONEZ MC &amp; RAF CAMORA</text>
     <text x="52" y="480" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
       <tspan x="52" dy="0">PALMEN AUS</tspan>
       <tspan x="52" dy="58">PLASTIK</tspan>
     </text>
     <text x="548" y="426" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2016</text>
   </g>
-  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ff2e88" stroke-width="6" opacity="0.9"/>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ffe600" stroke-width="6" opacity="0.9"/>
 </svg>

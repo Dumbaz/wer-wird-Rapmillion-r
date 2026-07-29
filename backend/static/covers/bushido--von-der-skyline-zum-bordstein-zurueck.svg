@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Von der Skyline zum Bordstein zurueck von Bushido">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Von der Skyline zum Bordstein zurück von Bushido">
   <defs>
-    <linearGradient id="bg" gradientTransform="rotate(293 0.5 0.5)">
+    <linearGradient id="bg" gradientTransform="rotate(186 0.5 0.5)">
       <stop offset="0%" stop-color="#ffd200"/>
       <stop offset="100%" stop-color="#ff5f00"/>
     </linearGradient>
@@ -12,19 +12,19 @@
   </defs>
   <g clip-path="url(#clip)">
     <rect width="600" height="600" fill="url(#bg)"/>
-    <polygon points="199.6,295.5 349.6,345.5 148.5,177.2" fill="none" stroke="#2b0a3d" stroke-width="5.4" opacity="0.37"/>
-    <polygon points="388.2,520.1 274.3,586.4 230.5,236.7" fill="none" stroke="#2b0a3d" stroke-width="6.0" opacity="0.33"/>
-    <polygon points="223.0,626.2 319.1,415.5 524.2,515.0" fill="none" stroke="#2b0a3d" stroke-width="2.5" opacity="0.21"/>
-    <polygon points="648.0,284.6 458.6,233.1 489.5,42.3" fill="none" stroke="#2b0a3d" stroke-width="6.1" opacity="0.32"/>
-    <polygon points="64.3,448.7 48.1,306.8 -50.0,428.7" fill="none" stroke="#2b0a3d" stroke-width="4.3" opacity="0.32"/>
-    <polygon points="-131.9,233.8 -135.7,244.6 2.4,442.9" fill="none" stroke="#2b0a3d" stroke-width="6.3" opacity="0.18"/>
+    <polygon points="469.7,635.2 543.0,677.4 705.6,492.1" fill="none" stroke="#2b0a3d" stroke-width="4.2" opacity="0.32"/>
+    <polygon points="300.4,342.5 490.1,416.3 488.4,518.3" fill="none" stroke="#2b0a3d" stroke-width="4.9" opacity="0.35"/>
+    <polygon points="-34.8,190.3 94.4,99.1 204.8,184.3" fill="none" stroke="#2b0a3d" stroke-width="2.3" opacity="0.37"/>
+    <polygon points="202.0,380.8 495.9,256.9 339.9,489.3" fill="none" stroke="#2b0a3d" stroke-width="3.3" opacity="0.34"/>
+    <polygon points="655.7,214.6 328.3,191.9 333.0,202.7" fill="none" stroke="#2b0a3d" stroke-width="6.3" opacity="0.21"/>
+    <polygon points="298.2,196.4 435.4,-129.9 591.4,54.7" fill="none" stroke="#2b0a3d" stroke-width="3.4" opacity="0.24"/>
     <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
     <rect x="0" y="322" width="600" height="278" fill="#000" opacity="0.58"/>
     <text x="52" y="368" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ffd200">BUSHIDO</text>
     <text x="52" y="422" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
       <tspan x="52" dy="0">VON DER SKYLINE</tspan>
       <tspan x="52" dy="58">ZUM BORDSTEIN</tspan>
-      <tspan x="52" dy="58">ZURUECK</tspan>
+      <tspan x="52" dy="58">ZURÜCK</tspan>
     </text>
     <text x="548" y="368" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2003</text>
   </g>
