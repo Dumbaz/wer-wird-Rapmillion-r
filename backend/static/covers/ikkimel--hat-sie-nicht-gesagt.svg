@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="HAT SIE NICHT GESAGT von Ikkimel">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(101 0.5 0.5)">
+      <stop offset="0%" stop-color="#ffd200"/>
+      <stop offset="100%" stop-color="#ff5f00"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="339.4" cy="177.4" r="45.4" fill="none" stroke="#2b0a3d" stroke-width="4.4" opacity="0.21"/>
+    <circle cx="110.3" cy="422.3" r="94.8" fill="none" stroke="#2b0a3d" stroke-width="6.2" opacity="0.42"/>
+    <circle cx="324.1" cy="100.2" r="164.5" fill="none" stroke="#2b0a3d" stroke-width="8.1" opacity="0.41"/>
+    <circle cx="140.6" cy="593.3" r="90.1" fill="none" stroke="#2b0a3d" stroke-width="2.6" opacity="0.34"/>
+    <circle cx="323.2" cy="114.7" r="125.3" fill="none" stroke="#2b0a3d" stroke-width="2.4" opacity="0.29"/>
+    <circle cx="52.4" cy="23.1" r="93.5" fill="none" stroke="#2b0a3d" stroke-width="5.8" opacity="0.18"/>
+    <circle cx="35.5" cy="376.1" r="40.9" fill="none" stroke="#2b0a3d" stroke-width="8.2" opacity="0.35"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="380" width="600" height="220" fill="#000" opacity="0.58"/>
+    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ffd200">IKKIMEL</text>
+    <text x="52" y="480" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">HAT SIE NICHT</tspan>
+      <tspan x="52" dy="58">GESAGT</tspan>
+    </text>
+    <text x="548" y="426" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2024</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#2b0a3d" stroke-width="6" opacity="0.9"/>
+</svg>

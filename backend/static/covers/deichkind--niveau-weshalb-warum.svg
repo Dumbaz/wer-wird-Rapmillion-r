@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Niveau Weshalb Warum von Deichkind">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(139 0.5 0.5)">
+      <stop offset="0%" stop-color="#00ff9d"/>
+      <stop offset="100%" stop-color="#005f56"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="55.5" cy="572.1" r="122.1" fill="none" stroke="#f7ff00" stroke-width="3.2" opacity="0.52"/>
+    <circle cx="536.9" cy="503.3" r="163.3" fill="none" stroke="#f7ff00" stroke-width="7.8" opacity="0.39"/>
+    <circle cx="45.0" cy="216.2" r="51.0" fill="none" stroke="#f7ff00" stroke-width="4.6" opacity="0.41"/>
+    <circle cx="215.1" cy="140.4" r="75.2" fill="none" stroke="#f7ff00" stroke-width="3.2" opacity="0.53"/>
+    <circle cx="396.8" cy="90.8" r="159.2" fill="none" stroke="#f7ff00" stroke-width="4.6" opacity="0.17"/>
+    <circle cx="294.5" cy="107.6" r="79.1" fill="none" stroke="#f7ff00" stroke-width="4.4" opacity="0.18"/>
+    <circle cx="504.7" cy="291.8" r="80.0" fill="none" stroke="#f7ff00" stroke-width="8.5" opacity="0.40"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="380" width="600" height="220" fill="#000" opacity="0.58"/>
+    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#f7ff00">DEICHKIND</text>
+    <text x="52" y="480" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">NIVEAU WESHALB</tspan>
+      <tspan x="52" dy="58">WARUM</tspan>
+    </text>
+    <text x="548" y="426" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2015</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#f7ff00" stroke-width="6" opacity="0.9"/>
+</svg>

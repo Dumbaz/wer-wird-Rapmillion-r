@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="CHEFMUSIK 2 von JULIEN BOSS">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(228 0.5 0.5)">
+      <stop offset="0%" stop-color="#ff6a00"/>
+      <stop offset="100%" stop-color="#c2185b"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <line x1="0.0" y1="0" x2="0.0" y2="600" stroke="#ffe600" stroke-width="2" opacity="0.23"/>
+    <line x1="0" y1="0.0" x2="600" y2="0.0" stroke="#ffe600" stroke-width="2" opacity="0.23"/>
+    <line x1="50.0" y1="0" x2="50.0" y2="600" stroke="#ffe600" stroke-width="2" opacity="0.23"/>
+    <line x1="0" y1="50.0" x2="600" y2="50.0" stroke="#ffe600" stroke-width="2" opacity="0.23"/>
+    <line x1="100.0" y1="0" x2="100.0" y2="600" stroke="#ffe600" stroke-width="2" opacity="0.14"/>
+    <line x1="0" y1="100.0" x2="600" y2="100.0" stroke="#ffe600" stroke-width="2" opacity="0.14"/>
+    <line x1="150.0" y1="0" x2="150.0" y2="600" stroke="#ffe600" stroke-width="2" opacity="0.22"/>
+    <line x1="0" y1="150.0" x2="600" y2="150.0" stroke="#ffe600" stroke-width="2" opacity="0.22"/>
+    <line x1="200.0" y1="0" x2="200.0" y2="600" stroke="#ffe600" stroke-width="2" opacity="0.17"/>
+    <line x1="0" y1="200.0" x2="600" y2="200.0" stroke="#ffe600" stroke-width="2" opacity="0.17"/>
+    <line x1="250.0" y1="0" x2="250.0" y2="600" stroke="#ffe600" stroke-width="2" opacity="0.29"/>
+    <line x1="0" y1="250.0" x2="600" y2="250.0" stroke="#ffe600" stroke-width="2" opacity="0.29"/>
+    <line x1="300.0" y1="0" x2="300.0" y2="600" stroke="#ffe600" stroke-width="2" opacity="0.30"/>
+    <line x1="0" y1="300.0" x2="600" y2="300.0" stroke="#ffe600" stroke-width="2" opacity="0.30"/>
+    <line x1="350.0" y1="0" x2="350.0" y2="600" stroke="#ffe600" stroke-width="2" opacity="0.27"/>
+    <line x1="0" y1="350.0" x2="600" y2="350.0" stroke="#ffe600" stroke-width="2" opacity="0.27"/>
+    <line x1="400.0" y1="0" x2="400.0" y2="600" stroke="#ffe600" stroke-width="2" opacity="0.15"/>
+    <line x1="0" y1="400.0" x2="600" y2="400.0" stroke="#ffe600" stroke-width="2" opacity="0.15"/>
+    <line x1="450.0" y1="0" x2="450.0" y2="600" stroke="#ffe600" stroke-width="2" opacity="0.09"/>
+    <line x1="0" y1="450.0" x2="600" y2="450.0" stroke="#ffe600" stroke-width="2" opacity="0.09"/>
+    <line x1="500.0" y1="0" x2="500.0" y2="600" stroke="#ffe600" stroke-width="2" opacity="0.11"/>
+    <line x1="0" y1="500.0" x2="600" y2="500.0" stroke="#ffe600" stroke-width="2" opacity="0.11"/>
+    <line x1="550.0" y1="0" x2="550.0" y2="600" stroke="#ffe600" stroke-width="2" opacity="0.09"/>
+    <line x1="0" y1="550.0" x2="600" y2="550.0" stroke="#ffe600" stroke-width="2" opacity="0.09"/>
+    <line x1="600.0" y1="0" x2="600.0" y2="600" stroke="#ffe600" stroke-width="2" opacity="0.29"/>
+    <line x1="0" y1="600.0" x2="600" y2="600.0" stroke="#ffe600" stroke-width="2" opacity="0.29"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ffe600">JULIEN BOSS</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">CHEFMUSIK 2</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2024</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ffe600" stroke-width="6" opacity="0.9"/>
+</svg>

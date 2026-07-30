@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Einsam sterben die Tapferen von Rokko Weissensee">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(17 0.5 0.5)">
+      <stop offset="0%" stop-color="#00ff9d"/>
+      <stop offset="100%" stop-color="#005f56"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <polygon points="414.2,380.8 402.5,97.9 131.8,335.4" fill="none" stroke="#f7ff00" stroke-width="2.1" opacity="0.31"/>
+    <polygon points="439.9,203.7 613.6,-90.7 476.4,-115.1" fill="none" stroke="#f7ff00" stroke-width="6.3" opacity="0.33"/>
+    <polygon points="401.4,-148.2 334.2,245.9 186.2,-21.0" fill="none" stroke="#f7ff00" stroke-width="6.7" opacity="0.49"/>
+    <polygon points="706.1,159.3 610.3,390.3 596.5,392.8" fill="none" stroke="#f7ff00" stroke-width="2.0" opacity="0.20"/>
+    <polygon points="74.4,25.7 224.9,162.3 130.2,-38.9" fill="none" stroke="#f7ff00" stroke-width="5.2" opacity="0.39"/>
+    <polygon points="559.0,-108.8 291.4,-137.4 511.1,157.1" fill="none" stroke="#f7ff00" stroke-width="6.3" opacity="0.29"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="380" width="600" height="220" fill="#000" opacity="0.58"/>
+    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#f7ff00">ROKKO WEISSENSEE</text>
+    <text x="52" y="480" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">EINSAM STERBEN</tspan>
+      <tspan x="52" dy="58">DIE TAPFEREN</tspan>
+    </text>
+    <text x="548" y="426" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2021</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#f7ff00" stroke-width="6" opacity="0.9"/>
+</svg>

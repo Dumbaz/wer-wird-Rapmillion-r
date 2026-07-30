@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Tourette-Syndrom EP von Edgar Wasser">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(69 0.5 0.5)">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#0b3d91"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="489.5" cy="514.5" r="181.8" fill="none" stroke="#ff2e88" stroke-width="6.6" opacity="0.40"/>
+    <circle cx="200.2" cy="430.5" r="82.0" fill="none" stroke="#ff2e88" stroke-width="2.6" opacity="0.42"/>
+    <circle cx="287.0" cy="227.1" r="40.8" fill="none" stroke="#ff2e88" stroke-width="7.2" opacity="0.47"/>
+    <circle cx="543.5" cy="541.2" r="81.2" fill="none" stroke="#ff2e88" stroke-width="3.8" opacity="0.21"/>
+    <circle cx="354.8" cy="549.7" r="194.9" fill="none" stroke="#ff2e88" stroke-width="4.8" opacity="0.28"/>
+    <circle cx="248.5" cy="206.8" r="92.6" fill="none" stroke="#ff2e88" stroke-width="8.7" opacity="0.45"/>
+    <circle cx="397.1" cy="57.8" r="63.3" fill="none" stroke="#ff2e88" stroke-width="8.9" opacity="0.54"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="380" width="600" height="220" fill="#000" opacity="0.58"/>
+    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ff2e88">EDGAR WASSER</text>
+    <text x="52" y="480" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">TOURETTE-SYNDROM</tspan>
+      <tspan x="52" dy="58">EP</tspan>
+    </text>
+    <text x="548" y="426" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2014</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ff2e88" stroke-width="6" opacity="0.9"/>
+</svg>

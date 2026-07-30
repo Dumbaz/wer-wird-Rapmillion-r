@@ -16,7 +16,7 @@ Albumcover eingeblendet.
 |---|---|
 | 15 Stufen | Von 50 € bis 1.000.000 €, Schwierigkeit steigt kontinuierlich |
 | Sicherheitsstufen | Bei 500 € (Stufe 5) und 16.000 € (Stufe 10) |
-| 75 Fragen | 5 pro Stufe, pro Runde zufällig gezogen und gemischt |
+| 105 Fragen | 7 pro Stufe, 81 Künstler, pro Runde zufällig gezogen und gemischt |
 | Belegte Zitate | Jede Zeile ist wörtlich gegen ihre Genius-Quelle verifiziert |
 | 3 Joker | Fifty-Fifty, Publikumsjoker, Skip |
 | Aussteigen | Gewinn jederzeit ab Stufe 2 sichern |
@@ -24,9 +24,10 @@ Albumcover eingeblendet.
 | Funky Sounds | Arpeggio bei richtig, Bass-Wobble + Scratch bei falsch, Fanfare bei der Million |
 | Reload-fest | Laufende Session wird über `localStorage` wiederhergestellt |
 
-Schwierigkeitskurve: Stufe 1–5 Chart-Hits (Apache 207, Haftbefehl, Bausa),
-6–10 bekannte Punchlines (K.I.Z, Kollegah, SSIO), 11–15 Klassiker und
-Underground (Advanced Chemistry 1992, Torch, Massive Töne, Doppelkopf).
+Schwierigkeitskurve: Stufe 1–5 Chart-Hits (Apache 207, Haftbefehl, Bausa, Juju,
+SSIO), 6–10 bekannte Punchlines und Szenegrößen (K.I.Z, Kollegah, OG Keemo,
+Antilopen Gang, Haiyti), 11–15 Klassiker und Underground (Advanced Chemistry
+1992, Torch, Morlockk Dilemma, Huss und Hodn, Absztrakkt, Main Concept).
 
 ## Herkunft der Zitate
 
@@ -100,11 +101,11 @@ Zeile dort nicht wörtlich auffindbar ist:
 
 ```bash
 cd backend
-python tools/verify_sources.py          # alle 75 Einträge
+python tools/verify_sources.py          # alle 105 Einträge
 python tools/verify_sources.py q003     # einzelne ID
 ```
 
-Aktueller Stand: **75/75 Zeilen wörtlich belegt.**
+Aktueller Stand: **105/105 Zeilen wörtlich belegt.**
 
 Dieses Skript existiert aus gutem Grund: Eine frühere Fassung des Katalogs
 enthielt 43 von 45 **frei erfundenen** Zeilen sowie zahlreiche falsche Alben und

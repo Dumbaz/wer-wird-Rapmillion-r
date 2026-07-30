@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Aversion von Antilopen Gang">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(307 0.5 0.5)">
+      <stop offset="0%" stop-color="#8f00ff"/>
+      <stop offset="100%" stop-color="#ff00c8"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="517.6" cy="339.7" r="151.7" fill="none" stroke="#00ffe0" stroke-width="5.2" opacity="0.46"/>
+    <circle cx="543.6" cy="395.3" r="129.9" fill="none" stroke="#00ffe0" stroke-width="4.1" opacity="0.32"/>
+    <circle cx="459.2" cy="37.5" r="184.6" fill="none" stroke="#00ffe0" stroke-width="5.2" opacity="0.55"/>
+    <circle cx="310.1" cy="594.8" r="144.9" fill="none" stroke="#00ffe0" stroke-width="8.1" opacity="0.39"/>
+    <circle cx="117.0" cy="276.1" r="150.7" fill="none" stroke="#00ffe0" stroke-width="2.8" opacity="0.24"/>
+    <circle cx="81.0" cy="442.7" r="64.6" fill="none" stroke="#00ffe0" stroke-width="2.7" opacity="0.27"/>
+    <circle cx="93.9" cy="283.7" r="116.6" fill="none" stroke="#00ffe0" stroke-width="5.9" opacity="0.22"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#00ffe0">ANTILOPEN GANG</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">AVERSION</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2014</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#00ffe0" stroke-width="6" opacity="0.9"/>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="D.N.A. von Genetikk">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(346 0.5 0.5)">
+      <stop offset="0%" stop-color="#ffd200"/>
+      <stop offset="100%" stop-color="#ff5f00"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <polygon points="468.6,-112.6 514.7,171.1 472.2,187.6" fill="none" stroke="#2b0a3d" stroke-width="3.3" opacity="0.30"/>
+    <polygon points="101.8,342.4 408.1,430.9 314.6,102.2" fill="none" stroke="#2b0a3d" stroke-width="3.5" opacity="0.27"/>
+    <polygon points="229.3,291.0 168.1,388.0 321.0,341.7" fill="none" stroke="#2b0a3d" stroke-width="6.0" opacity="0.30"/>
+    <polygon points="57.2,329.5 38.6,490.3 67.4,331.5" fill="none" stroke="#2b0a3d" stroke-width="6.7" opacity="0.38"/>
+    <polygon points="-34.0,742.9 191.2,581.5 -124.9,602.6" fill="none" stroke="#2b0a3d" stroke-width="6.4" opacity="0.43"/>
+    <polygon points="648.4,484.1 592.6,564.3 401.4,416.8" fill="none" stroke="#2b0a3d" stroke-width="2.8" opacity="0.21"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ffd200">GENETIKK</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">D.N.A.</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2013</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#2b0a3d" stroke-width="6" opacity="0.9"/>
+</svg>
