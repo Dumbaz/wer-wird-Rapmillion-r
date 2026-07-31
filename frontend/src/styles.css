@@ -146,6 +146,13 @@ body {
   margin-bottom: 28px;
 }
 
+.start__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
 /* ----------------------------------------------------------- Question */
 .question {
   background: var(--panel);

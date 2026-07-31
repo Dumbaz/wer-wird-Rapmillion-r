@@ -45,6 +45,8 @@ export default function App() {
    * sofort verschwinden.
    */
   const [view, setView] = useState<PublicQuestion | null>(null);
+  /** Gespeicherte, noch laufende Runde - wird auf dem Startbildschirm angeboten. */
+  const [resumable, setResumable] = useState<GameState | null>(null);
   const [phase, setPhase] = useState<Phase>("idle");
   const [selected, setSelected] = useState<number | null>(null);
   const [result, setResult] = useState<AnswerResult | null>(null);
@@ -105,21 +107,34 @@ export default function App() {
     }
   }, []);
 
-  // Laufende Session nach Reload wiederherstellen
+  /**
+   * Eine gespeicherte Runde wird NICHT mehr automatisch fortgesetzt.
+   * Vorher fuehrte das dazu, dass jeder Reload dieselbe Frage zeigte, ohne dass
+   * man eine neue Runde starten konnte. Stattdessen wird sie als Angebot auf dem
+   * Startbildschirm hinterlegt.
+   */
   useEffect(() => {
     const saved = localStorage.getItem(SESSION_KEY);
     if (!saved) return;
     api
       .getGame(saved)
-      .then(applyState)
+      .then((game) => {
+        if (game.status === "running" && game.question) {
+          setResumable(game);
+        } else {
+          localStorage.removeItem(SESSION_KEY);
+        }
+      })
       .catch(() => localStorage.removeItem(SESSION_KEY));
-  }, [applyState]);
+  }, []);
 
   const startGame = useCallback(async () => {
     unlockAudio();
     setBusy(true);
     setError(null);
     resetQuestionUi();
+    setResumable(null);
+    localStorage.removeItem(SESSION_KEY);
     try {
       applyState(await api.startGame());
     } catch (err) {
@@ -128,6 +143,14 @@ export default function App() {
       setBusy(false);
     }
   }, [applyState, handleError, resetQuestionUi]);
+
+  const resumeGame = useCallback(() => {
+    if (!resumable) return;
+    unlockAudio();
+    resetQuestionUi();
+    setResumable(null);
+    applyState(resumable);
+  }, [applyState, resetQuestionUi, resumable]);
 
   const chooseAnswer = useCallback(
     async (index: number) => {
@@ -279,7 +302,15 @@ export default function App() {
 
       <main className="layout">
         <section className="stage">
-          {!showGame && <StartScreen onStart={startGame} loading={busy} />}
+          {!showGame && (
+            <StartScreen
+              onStart={startGame}
+              loading={busy}
+              resumeLevel={resumable?.level ?? null}
+              resumePrize={resumable ? resumable.ladder[resumable.level - 1].prize : 0}
+              onResume={resumeGame}
+            />
+          )}
 
           {showGame && isFinished && state && (
             <GameOver
