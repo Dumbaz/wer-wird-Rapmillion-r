@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Storch oder Affen EP von MC Bomber &amp; MecsTreem">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(16 0.5 0.5)">
+      <stop offset="0%" stop-color="#00ff9d"/>
+      <stop offset="100%" stop-color="#005f56"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <rect x="-600.0" y="-600" width="53.3" height="1800" fill="#f7ff00" opacity="0.13" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-450.0" y="-600" width="45.5" height="1800" fill="#f7ff00" opacity="0.11" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-300.0" y="-600" width="31.5" height="1800" fill="#f7ff00" opacity="0.32" transform="rotate(28 300.0 300.0)"/>
+    <rect x="-150.0" y="-600" width="42.1" height="1800" fill="#f7ff00" opacity="0.20" transform="rotate(28 300.0 300.0)"/>
+    <rect x="0.0" y="-600" width="25.3" height="1800" fill="#f7ff00" opacity="0.32" transform="rotate(28 300.0 300.0)"/>
+    <rect x="150.0" y="-600" width="22.1" height="1800" fill="#f7ff00" opacity="0.36" transform="rotate(28 300.0 300.0)"/>
+    <rect x="300.0" y="-600" width="38.6" height="1800" fill="#f7ff00" opacity="0.28" transform="rotate(28 300.0 300.0)"/>
+    <rect x="450.0" y="-600" width="14.4" height="1800" fill="#f7ff00" opacity="0.20" transform="rotate(28 300.0 300.0)"/>
+    <rect x="600.0" y="-600" width="45.5" height="1800" fill="#f7ff00" opacity="0.18" transform="rotate(28 300.0 300.0)"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="380" width="600" height="220" fill="#000" opacity="0.58"/>
+    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="4" fill="#f7ff00">MC BOMBER &amp; MECSTREEM</text>
+    <text x="52" y="480" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">STORCH ODER</tspan>
+      <tspan x="52" dy="58">AFFEN EP</tspan>
+    </text>
+    <text x="548" y="426" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2015</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#f7ff00" stroke-width="6" opacity="0.9"/>
+</svg>

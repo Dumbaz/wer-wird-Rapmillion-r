@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="BRP 56 von Taktloss">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(108 0.5 0.5)">
+      <stop offset="0%" stop-color="#ff6a00"/>
+      <stop offset="100%" stop-color="#c2185b"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="387.5" cy="63.4" r="170.1" fill="none" stroke="#ffe600" stroke-width="5.0" opacity="0.48"/>
+    <circle cx="559.7" cy="596.5" r="101.5" fill="none" stroke="#ffe600" stroke-width="6.9" opacity="0.25"/>
+    <circle cx="274.4" cy="106.7" r="201.4" fill="none" stroke="#ffe600" stroke-width="5.7" opacity="0.50"/>
+    <circle cx="476.6" cy="287.2" r="163.4" fill="none" stroke="#ffe600" stroke-width="4.5" opacity="0.30"/>
+    <circle cx="228.7" cy="357.3" r="100.6" fill="none" stroke="#ffe600" stroke-width="3.1" opacity="0.18"/>
+    <circle cx="526.4" cy="178.7" r="85.3" fill="none" stroke="#ffe600" stroke-width="7.2" opacity="0.22"/>
+    <circle cx="477.8" cy="296.2" r="128.5" fill="none" stroke="#ffe600" stroke-width="6.5" opacity="0.34"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ffe600">TAKTLOSS</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">BRP 56</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2004</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ffe600" stroke-width="6" opacity="0.9"/>
+</svg>

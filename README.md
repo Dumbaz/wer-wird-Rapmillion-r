@@ -16,7 +16,7 @@ Albumcover eingeblendet.
 |---|---|
 | 15 Stufen | Von 50 € bis 1.000.000 €, Schwierigkeit steigt kontinuierlich |
 | Sicherheitsstufen | Bei 500 € (Stufe 5) und 16.000 € (Stufe 10) |
-| 105 Fragen | 7 pro Stufe, 81 Künstler, pro Runde zufällig gezogen und gemischt |
+| 135 Fragen | 9 pro Stufe, 100 Künstler, pro Runde zufällig gezogen und gemischt |
 | Belegte Zitate | Jede Zeile ist wörtlich gegen ihre Genius-Quelle verifiziert |
 | 3 Joker | Fifty-Fifty, Publikumsjoker, Skip |
 | Aussteigen | Gewinn jederzeit ab Stufe 2 sichern |
@@ -42,8 +42,16 @@ griechischer Salat" heißt im Original „Du Verräter hast mehr Väter als
 griechischer Salat").
 
 **Inhaltsfilter:** Derbe, vulgäre und misogyne Zeilen sind bewusst enthalten —
-sie gehören zum Genre. Ausgeschlossen wurden homophobe und fremdenfeindliche
-Zeilen.
+sie gehören zum Genre. Ausgeschlossen sind homophobe Slurs, fremdenfeindliche
+und rassistische Begriffe, NS-Vergleiche sowie „behindert"/„Spast" als
+Beleidigung.
+
+Der Filter greift nicht nur auf die zitierte Zeile, sondern auf den **gesamten
+Songtext**. Gerade im Berliner Battle Rap führte das zu vielen Ausweichfällen —
+bei MC Bomber, Taktloss, B-Tight, MOK, SpongeBOZZ, 4tune und Bass Sultan Hengzt
+mussten die jeweils meistgesehenen Songs verworfen und ein sauberer Track
+desselben Künstlers gewählt werden. Ein Skript prüft alle Zeilen gegen eine
+Sperrwortliste: aktuell 0 Treffer.
 
 ## Setup
 
@@ -101,11 +109,11 @@ Zeile dort nicht wörtlich auffindbar ist:
 
 ```bash
 cd backend
-python tools/verify_sources.py          # alle 105 Einträge
+python tools/verify_sources.py          # alle 135 Einträge
 python tools/verify_sources.py q003     # einzelne ID
 ```
 
-Aktueller Stand: **105/105 Zeilen wörtlich belegt.**
+Aktueller Stand: **135/135 Zeilen wörtlich belegt.**
 
 Dieses Skript existiert aus gutem Grund: Eine frühere Fassung des Katalogs
 enthielt 43 von 45 **frei erfundenen** Zeilen sowie zahlreiche falsche Alben und

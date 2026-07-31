@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Ekeltape von TIEFBASSKOMMANDO">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(49 0.5 0.5)">
+      <stop offset="0%" stop-color="#8f00ff"/>
+      <stop offset="100%" stop-color="#ff00c8"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="282.9" cy="451.2" r="161.5" fill="none" stroke="#00ffe0" stroke-width="3.6" opacity="0.26"/>
+    <circle cx="143.1" cy="251.5" r="152.1" fill="none" stroke="#00ffe0" stroke-width="5.7" opacity="0.25"/>
+    <circle cx="494.8" cy="304.2" r="84.8" fill="none" stroke="#00ffe0" stroke-width="4.6" opacity="0.34"/>
+    <circle cx="43.2" cy="288.8" r="188.1" fill="none" stroke="#00ffe0" stroke-width="6.3" opacity="0.22"/>
+    <circle cx="492.7" cy="273.3" r="48.3" fill="none" stroke="#00ffe0" stroke-width="4.3" opacity="0.51"/>
+    <circle cx="149.0" cy="44.5" r="63.4" fill="none" stroke="#00ffe0" stroke-width="6.6" opacity="0.23"/>
+    <circle cx="438.7" cy="232.9" r="62.8" fill="none" stroke="#00ffe0" stroke-width="3.4" opacity="0.40"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#00ffe0">TIEFBASSKOMMANDO</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">EKELTAPE</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2020</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#00ffe0" stroke-width="6" opacity="0.9"/>
+</svg>
