@@ -7,11 +7,14 @@ Album, Jahr, Albumcover und ein Link zum vollständigen Songtext eingeblendet.
 
 | Bereich | Technik |
 |---|---|
-| Backend | Python ≥ 3.11, FastAPI, Pydantic v2 – Antwortprüfung passiert serverseitig |
+| Spiellogik | TypeScript im Browser (`frontend/src/game.ts`) – rein statische Seite, kein Server |
+| Katalog | Python ≥ 3.11 + Pydantic v2 (`backend/`), wird zu `questions.json` exportiert |
 | Frontend | React 18, TypeScript (strict), Vite 6 |
 | Sounds | Komplett über die Web Audio API synthetisiert – keine Audiodateien |
 | Albumcover | Generierte SVGs, ausschließlich in `backend/static/covers/` |
-| Tests | pytest (API + Katalog), Playwright (visueller Smoke-Test) |
+| Tests | Vitest (Spiellogik), pytest (Katalog), Playwright (visueller Smoke-Test) |
+
+**Live:** https://dumbaz.github.io/wer-wird-Rapmillion-r/ (GitHub Pages, wird bei jedem Push auf `main` neu gebaut)
 
 > Für KI-Agenten und neue Mitwirkende: Arbeitsregeln, Invarianten und Fallstricke
 > stehen in [`AGENTS.md`](AGENTS.md).
@@ -21,39 +24,36 @@ Album, Jahr, Albumcover und ein Link zum vollständigen Songtext eingeblendet.
 Voraussetzungen: Python ≥ 3.11, Node ≥ 18.
 
 ```bash
-./start.sh          # Produktion: baut das Frontend, alles auf http://127.0.0.1:8000
-./start.sh --dev    # Entwicklung: Backend mit --reload (:8000) + Vite (:5173)
+./start.sh          # baut die Seite und zeigt sie auf http://127.0.0.1:4173
+./start.sh --dev    # Entwicklung: Vite mit Hot Reload auf http://localhost:5173
 PORT=9000 ./start.sh
 ```
 
-Das Skript legt beim ersten Lauf venv und `node_modules` selbst an und baut
-das Frontend nur neu, wenn sich die Quellen geändert haben. Manuell geht es so:
+Das Skript legt beim ersten Lauf venv und `node_modules` selbst an, exportiert
+den Katalog und baut das Frontend. Manuell geht es so:
 
 ```bash
-# Terminal 1 – Backend (http://127.0.0.1:8000, API-Doku unter /docs)
 cd backend
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements-dev.txt
-uvicorn app.main:app --reload
+python tools/export_catalog.py     # schreibt frontend/public/questions.json + covers/
 
-# Terminal 2 – Frontend (http://localhost:5173)
-cd frontend
+cd ../frontend
 npm install
-npm run dev
+npm run dev                        # oder: npm run build && npx vite preview
 ```
 
-Der Vite-Dev-Server proxied `/api` und `/covers` auf Port 8000. Die Cover sind
-eingecheckt; `python tools/gen_covers.py` ist nur nach Katalogänderungen nötig.
+`frontend/public/questions.json` und `frontend/public/covers/` sind Build-
+Artefakte (gitignored) und werden von `export_catalog.py` erzeugt. Die Quelle
+der Cover bleibt `backend/static/covers/` (eingecheckt); `python
+tools/gen_covers.py` ist nur nach Katalogänderungen nötig.
 
-### Produktion
+### Veröffentlichung (GitHub Pages)
 
-```bash
-cd frontend && npm run build
-cd ../backend && uvicorn app.main:app
-```
-
-Existiert `frontend/dist/`, liefert FastAPI das Frontend unter `/` gleich mit aus –
-ein einziger Prozess auf Port 8000.
+`.github/workflows/pages.yml` läuft bei jedem Push auf `main`: pytest,
+Katalog-Export, Typecheck, Vitest, Build, Deploy. Der Build nutzt den relativen
+Basispfad `./` und funktioniert damit unter jeder URL. Einmalig nötig:
+Repository → *Settings → Pages → Source: GitHub Actions*.
 
 ## Features
 
@@ -61,13 +61,13 @@ ein einziger Prozess auf Port 8000.
 |---|---|
 | 15 Stufen | Von 50 € bis 1.000.000 €, Schwierigkeit steigt kontinuierlich |
 | Sicherheitsstufen | Bei 500 € (Stufe 5) und 16.000 € (Stufe 10) |
-| 135+ Fragen | mindestens 9 pro Stufe, pro Runde zufällig gezogen, Antworten gemischt |
+| 170+ Fragen | mindestens 9 pro Stufe, pro Runde zufällig gezogen, Antworten gemischt |
 | Belegte Zitate | Jede Zeile ist wörtlich gegen ihre Genius-Quelle verifiziert |
 | 3 Joker | Fifty-Fifty, Publikumsjoker, Skip (neue Frage auf gleicher Stufe) |
 | Aussteigen | Gewinn jederzeit sichern |
 | Cover-Reveal | Albumcover, Track, Album, Jahr und Quellenlink nach jeder Antwort |
 | Funky Sounds | Arpeggio bei richtig, Bass-Wobble + Scratch bei falsch, Fanfare bei der Million |
-| Runde fortsetzen | Die Session-ID liegt in `localStorage`; eine laufende Runde wird auf dem Startbildschirm zum Fortsetzen angeboten (nicht automatisch geladen) |
+| Runde fortsetzen | Der Spielstand liegt in `localStorage`; eine laufende Runde wird auf dem Startbildschirm zum Fortsetzen angeboten (nicht automatisch geladen) |
 
 Schwierigkeitskurve: Stufe 1–5 Chart-Hits (Apache 207, Haftbefehl, Bausa, Juju,
 SSIO), 6–10 bekannte Punchlines und Szenegrößen (K.I.Z, Kollegah, OG Keemo,
@@ -77,60 +77,48 @@ Antilopen Gang, Haiyti), 11–15 Klassiker und Underground (Advanced Chemistry
 ## Architektur
 
 ```
-Browser (React)  ──/api──▶  FastAPI (routes.py)  ──▶  game.py (Session, Joker, Leiter)
-       │                                                   │
-       └──/covers──▶  StaticFiles(backend/static/covers)   └──▶ data/questions.py (Katalog)
+Browser (React) ──▶ api.ts ──▶ game.ts (Runde, Joker, Leiter)
+       │                  └──▶ questions.json  (Export aus backend/app/data/questions.py)
+       └──▶ covers/*.svg
 ```
 
-- **Sessions** liegen im Speicher (`SessionStore` in `game.py`, TTL 6 h). Ein
-  Neustart des Backends verwirft alle laufenden Runden. Der Store ist hinter
-  einem schmalen Interface gekapselt, damit später Redis/SQLite möglich ist.
-- **Die Lösung verlässt den Server erst mit der Antwort auf `/answer`.** Der
-  Client bekommt nur `PublicQuestion` (ohne `correct_index`) – Cheaten über die
-  DevTools ist nicht möglich.
-- **Typen** existieren doppelt: Pydantic in `backend/app/models.py`, TypeScript
-  in `frontend/src/types.ts`. Beide müssen synchron gehalten werden.
-
-### API
-
-| Methode | Pfad | Zweck |
-|---|---|---|
-| `POST` | `/api/game` | Neue Runde starten (201) |
-| `GET` | `/api/game/{id}` | Aktuellen Spielzustand abrufen |
-| `POST` | `/api/game/{id}/answer` | Antwort prüfen (`{"answer_index": 0-2}`), Song aufdecken |
-| `POST` | `/api/game/{id}/lifeline` | Joker einsetzen (`fifty_fifty` \| `publikum` \| `skip`) |
-| `POST` | `/api/game/{id}/cashout` | Aussteigen |
-| `GET` | `/api/health` | Health-Check |
-| `GET` | `/covers/{datei}.svg` | Albumcover |
-| `GET` | `/docs` | Interaktive OpenAPI-Doku |
-
-Fehler: `404` für unbekannte Sessions, `409` für fachlich ungültige Aktionen
-(Spiel beendet, Joker verbraucht).
+- **Alles läuft im Browser.** `game.ts` ist eine reine Spiellogik ohne
+  Netzwerk (Katalog und Zufall werden hineingereicht, daher gut testbar);
+  `api.ts` hält die laufende Runde und speichert sie in `localStorage`.
+- **Die Antworten stehen im ausgelieferten `questions.json`.** Wer die DevTools
+  öffnet, kann die Lösung nachlesen. Das ist bewusst akzeptiert (Spaßquiz ohne
+  Preis) und wird nicht verschleiert.
+- **Der Katalog bleibt in Python** (`backend/app/data/questions.py`, Pydantic-
+  Modell `Question`) und ist die einzige Quelle der Wahrheit; die Tests und die
+  Quellenprüfung hängen daran. `export_catalog.py` macht daraus das JSON.
+- **Typen:** `Question` (Pydantic) und `Question` in `frontend/src/game.ts`
+  beschreiben dasselbe JSON und müssen synchron bleiben.
 
 ### Projektstruktur
 
 ```
 backend/
 ├── app/
-│   ├── main.py            FastAPI-App, CORS, Static Mounts (Cover + optional dist/)
-│   ├── models.py          Pydantic-Schemas
-│   ├── game.py            Gewinnleiter, Sicherheitsstufen, Sessions, Joker
-│   ├── routes.py          API-Endpunkte
+│   ├── models.py          Pydantic-Modell Question
 │   └── data/questions.py  Fragenkatalog (Liste RAW)
 ├── static/covers/         NUR Albumcover (generierte SVGs, eingecheckt)
 ├── tools/
+│   ├── export_catalog.py  Katalog + Cover -> frontend/public/
 │   ├── gen_covers.py      Cover-Generator (deterministisch, entfernt verwaiste Cover)
 │   └── verify_sources.py  Quellenprüfung der Zitate gegen Genius
-└── tests/test_api.py      Katalog- und API-Tests
+└── tests/test_catalog.py  Katalog-Tests
 
 frontend/
 ├── src/
 │   ├── App.tsx            Spielzustandsmaschine
-│   ├── api.ts  types.ts   API-Client und Typen
+│   ├── game.ts            Spiellogik (Leiter, Sicherheitsstufen, Joker)
+│   ├── game.test.ts       Vitest-Tests der Spiellogik
+│   ├── api.ts  types.ts   lokale "API" über game.ts, Typen
 │   ├── audio/sfx.ts       Web-Audio-Sound-Engine
 │   └── components/        StartScreen, Ladder, AnswerButton, Lifelines, CoverReveal, GameOver
 ├── scripts/screenshot.mjs Playwright-Smoke-Test
-└── vite.config.ts         Dev-Proxy auf :8000
+└── vite.config.ts         base "./"
+.github/workflows/pages.yml  Test, Build und Deploy auf GitHub Pages
 ```
 
 ## Tests
@@ -138,17 +126,19 @@ frontend/
 ```bash
 cd backend
 pip install -r requirements-dev.txt
-python -m pytest tests -q
+python -m pytest tests -q          # Katalogqualität
 
 cd ../frontend
 npm run typecheck
+npm test                           # Vitest: Spiellogik
 ```
 
 Abgedeckt: Datenqualität des Katalogs (mindestens 9 Fragen pro Stufe, drei
 eindeutige Antworten, Künstlername nicht in der Zeile, keine doppelten Zeilen
-oder Songs), Quellenpflicht, Existenz aller Cover, kompletter Durchlauf bis zur
-Million, Sicherheitsstufen, Cash-out, alle drei Joker und die Zusicherung, dass
-die Lösung nie vor der Antwort an den Client geht.
+oder Songs, keine personellen Überschneidungen der Optionen), Quellenpflicht,
+Existenz aller Cover sowie in Vitest Gewinnleiter, Sicherheitsstufen,
+Cash-out, alle drei Joker, keine Wiederholung innerhalb einer Runde, Mischung
+der Antworten und Fortsetzen aus dem gespeicherten Spielstand.
 
 ### Quellenprüfung
 
@@ -161,12 +151,12 @@ python tools/verify_sources.py          # alle Einträge
 python tools/verify_sources.py q003     # einzelne IDs
 ```
 
-Aktueller Stand: **135/135 Zeilen wörtlich belegt.**
+Neue Einträge werden bei der Aufnahme mit diesem Skript geprüft.
 
 Dieses Skript existiert aus gutem Grund: Eine frühere Fassung des Katalogs
 enthielt 43 von 45 **frei erfundenen** Zeilen sowie zahlreiche falsche Alben und
 Jahreszahlen. Der Katalog wurde daraufhin vollständig neu aufgebaut. `source`
-ist seitdem Pflichtfeld, und `tests/test_api.py` lehnt Einträge ohne
+ist seitdem Pflichtfeld, und `tests/test_catalog.py` lehnt Einträge ohne
 Genius-Quelle ab.
 
 ### Visueller Test
@@ -175,9 +165,8 @@ Klickt das Quiz mit Playwright wie ein echter User durch, prüft, ob die
 Albumcover tatsächlich laden, und legt Screenshots in `/tmp/shots` ab:
 
 ```bash
-cd frontend && npm run build
-cd ../backend && uvicorn app.main:app --port 8014 &
-cd ../frontend && npx playwright install chromium   # einmalig
+./start.sh &                                        # Seite auf :4173
+cd frontend && npx playwright install chromium      # einmalig
 npm run shots                                       # QUIZ_URL überschreibt die Ziel-URL
 ```
 
@@ -205,7 +194,7 @@ Neuen Eintrag in `backend/app/data/questions.py` in die Liste `RAW` einfügen:
 Danach:
 
 ```bash
-python tools/gen_covers.py        # erzeugt das Cover
+python tools/gen_covers.py        # erzeugt das Cover (danach export_catalog.py)
 python tools/verify_sources.py    # belegt die Zeile gegen die Quelle
 python -m pytest tests -q
 ```

@@ -1,4 +1,4 @@
-"""Fragenkatalog: 15 Level x 3 Fragen.
+"""Fragenkatalog: 15 Level, je mindestens 9 Fragen (waechst jahrgangsweise).
 
 QUELLENPFLICHT
 --------------
