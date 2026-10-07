@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Zeiten ändern dich von Bushido">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(351 0.5 0.5)">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#0b3d91"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="451.8" cy="255.0" r="61.7" fill="none" stroke="#ff2e88" stroke-width="6.8" opacity="0.33"/>
+    <circle cx="495.1" cy="553.5" r="208.3" fill="none" stroke="#ff2e88" stroke-width="2.4" opacity="0.50"/>
+    <circle cx="473.8" cy="166.2" r="177.9" fill="none" stroke="#ff2e88" stroke-width="6.9" opacity="0.49"/>
+    <circle cx="136.8" cy="377.5" r="106.2" fill="none" stroke="#ff2e88" stroke-width="5.9" opacity="0.34"/>
+    <circle cx="583.7" cy="484.4" r="73.3" fill="none" stroke="#ff2e88" stroke-width="4.7" opacity="0.31"/>
+    <circle cx="438.7" cy="85.2" r="187.3" fill="none" stroke="#ff2e88" stroke-width="4.0" opacity="0.54"/>
+    <circle cx="39.2" cy="590.5" r="41.7" fill="none" stroke="#ff2e88" stroke-width="4.4" opacity="0.37"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="380" width="600" height="220" fill="#000" opacity="0.58"/>
+    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ff2e88">BUSHIDO</text>
+    <text x="52" y="480" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">ZEITEN ÄNDERN</tspan>
+      <tspan x="52" dy="58">DICH</tspan>
+    </text>
+    <text x="548" y="426" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2010</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ff2e88" stroke-width="6" opacity="0.9"/>
+</svg>

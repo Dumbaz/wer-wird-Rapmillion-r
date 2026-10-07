@@ -1649,6 +1649,18 @@ RAW: list[dict] = [
         "year": 2009,
         "source": G + "Sido-geburtstag-lyrics",
     },
+    # ================================================== Jahrgang 2010
+    {
+        "level": 5,
+        "line": "Ein Stift, ein Papier und ich nehm' diese Lines auf",
+        "answers": ["Bushido", "Kollegah", "Farid Bang"],
+        "correct": 0,
+        "artist": "Bushido",
+        "track": "Zeiten ändern dich",
+        "album": "Zeiten ändern dich",
+        "year": 2010,
+        "source": G + "Bushido-zeiten-andern-dich-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
