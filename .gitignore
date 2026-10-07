@@ -22,3 +22,7 @@ dist/
 
 # Versehentlich entstehende leere Datei
 backend/.py
+
+# Build-Artefakte des Katalog-Exports
+frontend/public/questions.json
+frontend/public/covers/
