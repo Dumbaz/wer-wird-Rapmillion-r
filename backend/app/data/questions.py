@@ -1577,6 +1577,18 @@ RAW: list[dict] = [
         "year": 1994,
         "source": G + "Rodelheim-hartreim-projekt-keine-ist-lyrics",
     },
+    # ================================================== Jahrgang 1995
+    {
+        "level": 5,
+        "line": "Schaust du deinen eigenen Film und bist dein eigener Held",
+        "answers": ["Die Fantastischen Vier", "Fettes Brot", "Absolute Beginner"],
+        "correct": 0,
+        "artist": "Die Fantastischen Vier",
+        "track": "Sie ist weg",
+        "album": "Lauschgift",
+        "year": 1995,
+        "source": G + "Die-fantastischen-vier-sie-ist-weg-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
