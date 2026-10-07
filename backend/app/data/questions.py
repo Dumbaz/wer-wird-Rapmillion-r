@@ -1943,6 +1943,18 @@ RAW: list[dict] = [
         "year": 2001,
         "source": G + "Jan-delay-ich-mochte-nicht-dass-ihr-meine-lieder-singt-lyrics",
     },
+    # ================================================== Jahrgang 2004
+    {
+        "level": 13,
+        "line": "Hatte noch nie 'n anderes Hobby als Musik und Graffiti",
+        "answers": ["Samy Deluxe", "Main Concept", "Massive Töne"],
+        "correct": 0,
+        "artist": "Samy Deluxe",
+        "track": "Zurück",
+        "album": "Verdammtnochma!",
+        "year": 2004,
+        "source": G + "Samy-deluxe-zuruck-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
