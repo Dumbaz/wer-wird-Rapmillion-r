@@ -1,6 +1,15 @@
+import { Game, GameError, type Question, type Session } from "./game";
 import type { AnswerResult, GameState, Lifeline, LifelineResult } from "./types";
 
-const BASE = "/api";
+/**
+ * Lokale "API": Die Spiellogik läuft komplett im Browser (siehe game.ts), der
+ * Katalog kommt aus questions.json. Die Signaturen entsprechen der früheren
+ * HTTP-API, damit die Oberfläche unverändert bleibt.
+ */
+
+const BASE_URL = import.meta.env.BASE_URL;
+const COVER_BASE = `${BASE_URL}covers`;
+const STORE_KEY = "wwr-session";
 
 export class ApiError extends Error {
   constructor(
@@ -12,50 +21,83 @@ export class ApiError extends Error {
   }
 }
 
-async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  let response: Response;
-  try {
-    response = await fetch(`${BASE}${path}`, {
-      headers: { "Content-Type": "application/json" },
-      ...init,
+let questionsPromise: Promise<Question[]> | null = null;
+
+function loadQuestions(): Promise<Question[]> {
+  questionsPromise ??= fetch(`${BASE_URL}questions.json`)
+    .then((res) => {
+      if (!res.ok) throw new Error(String(res.status));
+      return res.json() as Promise<Question[]>;
+    })
+    .catch(() => {
+      questionsPromise = null;
+      throw new ApiError("Fragenkatalog konnte nicht geladen werden.", 0);
     });
-  } catch {
-    throw new ApiError("Backend nicht erreichbar. Läuft uvicorn auf Port 8000?", 0);
-  }
+  return questionsPromise;
+}
 
-  if (!response.ok) {
-    let detail = `Fehler ${response.status}`;
+let current: Game | null = null;
+
+function persist(game: Game): void {
+  if (game.session.status === "running") {
+    localStorage.setItem(STORE_KEY, JSON.stringify(game.session));
+  } else {
+    localStorage.removeItem(STORE_KEY);
+  }
+}
+
+async function gameFor(sessionId: string): Promise<Game> {
+  if (current && current.session.id === sessionId) return current;
+  const raw = localStorage.getItem(STORE_KEY);
+  if (raw) {
     try {
-      const body = await response.json();
-      if (typeof body?.detail === "string") detail = body.detail;
-    } catch {
-      /* Antwort war kein JSON */
+      const session = JSON.parse(raw) as Session;
+      if (session.id === sessionId) {
+        current = new Game(await loadQuestions(), session);
+        return current;
+      }
+    } catch (err) {
+      if (err instanceof ApiError) throw err;
+      /* defekter Spielstand: unten als nicht gefunden behandeln */
     }
-    throw new ApiError(detail, response.status);
   }
+  throw new ApiError("Session nicht gefunden", 404);
+}
 
-  return (await response.json()) as T;
+async function run<T>(sessionId: string, action: (game: Game) => T): Promise<T> {
+  const game = await gameFor(sessionId);
+  try {
+    const result = action(game);
+    persist(game);
+    return result;
+  } catch (err) {
+    if (err instanceof GameError) throw new ApiError(err.message, err.status);
+    throw err;
+  }
 }
 
 export const api = {
-  startGame: () => request<GameState>("/game", { method: "POST" }),
+  startGame: async (): Promise<GameState> => {
+    const questions = await loadQuestions();
+    try {
+      current = Game.create(questions);
+    } catch (err) {
+      if (err instanceof GameError) throw new ApiError(err.message, err.status);
+      throw err;
+    }
+    persist(current);
+    return current.state();
+  },
 
-  getGame: (sessionId: string) => request<GameState>(`/game/${sessionId}`),
+  getGame: (sessionId: string): Promise<GameState> => run(sessionId, (g) => g.state()),
 
-  answer: (sessionId: string, answerIndex: number) =>
-    request<AnswerResult>(`/game/${sessionId}/answer`, {
-      method: "POST",
-      body: JSON.stringify({ answer_index: answerIndex }),
-    }),
+  answer: (sessionId: string, answerIndex: number): Promise<AnswerResult> =>
+    run(sessionId, (g) => g.answer(answerIndex, COVER_BASE)),
 
-  lifeline: (sessionId: string, lifeline: Lifeline) =>
-    request<LifelineResult>(`/game/${sessionId}/lifeline`, {
-      method: "POST",
-      body: JSON.stringify({ lifeline }),
-    }),
+  lifeline: (sessionId: string, lifeline: Lifeline): Promise<LifelineResult> =>
+    run(sessionId, (g) => g.useLifeline(lifeline)),
 
-  cashOut: (sessionId: string) =>
-    request<GameState>(`/game/${sessionId}/cashout`, { method: "POST" }),
+  cashOut: (sessionId: string): Promise<GameState> => run(sessionId, (g) => g.cashOut()),
 };
 
 export const formatEuro = (amount: number) =>
