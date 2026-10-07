@@ -1883,6 +1883,18 @@ RAW: list[dict] = [
         "year": 2011,
         "source": G + "Casper-der-druck-steigt-lyrics",
     },
+    # ================================================== Jahrgang 2018
+    {
+        "level": 3,
+        "line": "Heute ess' ich Steak, gestern Fünf-Minuten-Nudeln",
+        "answers": ["Capital Bra", "Bausa", "Kontra K"],
+        "correct": 0,
+        "artist": "Capital Bra",
+        "track": "Berlin lebt",
+        "album": "Berlin lebt",
+        "year": 2018,
+        "source": G + "Capital-bra-berlin-lebt-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
