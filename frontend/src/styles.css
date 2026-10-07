@@ -94,10 +94,20 @@ body {
   .layout {
     grid-template-columns: 1fr;
   }
+
+  /* Mobil: Stufe und Preis stehen schon im Fragenkopf, die Leiter wuerde nur
+     unter dem Spielfeld liegen und das Scrollen stoeren. */
+  .ladder {
+    display: none;
+  }
 }
 
 .stage {
   min-width: 0;
+}
+
+.question {
+  scroll-margin-top: 12px;
 }
 
 /* -------------------------------------------------------------- Start */

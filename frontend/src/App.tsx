@@ -34,6 +34,9 @@ const SUSPENSE_MS = 1600;
  */
 const forCaps = (text: string) => text.replace(/ß/g, "SS");
 
+const scrollBehavior = (): ScrollBehavior =>
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+
 type Phase = "idle" | "playing" | "suspense" | "revealed" | "finished";
 
 export default function App() {
@@ -57,6 +60,8 @@ export default function App() {
   const [muted, setMuted] = useState(isMuted);
 
   const timerRef = useRef<number | null>(null);
+  const questionRef = useRef<HTMLDivElement | null>(null);
+  const revealRef = useRef<HTMLDivElement | null>(null);
 
   const clearTimer = () => {
     if (timerRef.current !== null) {
@@ -69,6 +74,29 @@ export default function App() {
     clearTimer();
     stopTicking();
   }, []);
+
+  /**
+   * Auf dem Smartphone liegt Frage, Antwort und Reveal untereinander. Nach der
+   * Antwort scrollt die Seite zum Reveal (Cover + "Weiter"-Button), nach dem
+   * Weiter-Klick zur neuen Frage.
+   */
+  useEffect(() => {
+    if (phase !== "revealed") return;
+    revealRef.current?.scrollIntoView({ behavior: scrollBehavior(), block: "nearest" });
+  }, [phase]);
+
+  const questionId = view?.id;
+  useEffect(() => {
+    if (phase !== "playing" || !questionId) return;
+    const el = questionRef.current;
+    if (!el) return;
+    // Nur scrollen, wenn die Frage nicht ohnehin im oberen Bildschirmbereich liegt
+    // (sonst springt schon der Spielstart).
+    const top = el.getBoundingClientRect().top;
+    if (top < 0 || top > window.innerHeight * 0.4) {
+      el.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
+    }
+  }, [phase, questionId]);
 
   const resetQuestionUi = useCallback(() => {
     setSelected(null);
@@ -323,7 +351,7 @@ export default function App() {
 
           {showGame && !isFinished && question && (
             <>
-              <div className="question">
+              <div className="question" ref={questionRef}>
                 <div className="question__head">
                   <span className="question__level">
                     Stufe {question.level}
@@ -350,14 +378,16 @@ export default function App() {
               </div>
 
               {phase === "revealed" && result && (
-                <CoverReveal
-                  reveal={result.reveal}
-                  correct={result.correct}
-                  onContinue={continueAfterReveal}
-                  continueLabel={
-                    result.state.status === "running" ? "Weiter zur nächsten Stufe" : "Ergebnis ansehen"
-                  }
-                />
+                <div ref={revealRef}>
+                  <CoverReveal
+                    reveal={result.reveal}
+                    correct={result.correct}
+                    onContinue={continueAfterReveal}
+                    continueLabel={
+                      result.state.status === "running" ? "Weiter zur nächsten Stufe" : "Ergebnis ansehen"
+                    }
+                  />
+                </div>
               )}
 
               {phase === "playing" && state && (
