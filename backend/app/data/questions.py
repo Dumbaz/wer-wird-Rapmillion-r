@@ -1601,6 +1601,18 @@ RAW: list[dict] = [
         "year": 1996,
         "source": G + "Tic-tac-toe-verpiss-dich-lyrics",
     },
+    # ================================================== Jahrgang 1997
+    {
+        "level": 9,
+        "line": "Du findest mich sonderbar? Alter, du bist faker als 'n Wonderbra",
+        "answers": ["Sabrina Setlur", "Cora E.", "Aziza A."],
+        "correct": 0,
+        "artist": "Sabrina Setlur",
+        "track": "Du liebst mich nicht",
+        "album": "Die neue S-Klasse",
+        "year": 1997,
+        "source": G + "Sabrina-setlur-du-liebst-mich-nicht-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
