@@ -1955,6 +1955,18 @@ RAW: list[dict] = [
         "year": 2004,
         "source": G + "Samy-deluxe-zuruck-lyrics",
     },
+    # ================================================== Jahrgang 2006
+    {
+        "level": 13,
+        "line": "Bin kein hartnäckiger Wadenbeißer / Bin kein Freischwimmer, ich bin Bademeister",
+        "answers": ["Dendemann", "Blumentopf", "Massive Töne"],
+        "correct": 0,
+        "artist": "Dendemann",
+        "track": "Endlich Nichtschwimmer",
+        "album": "Die Pfütze des Eisbergs",
+        "year": 2006,
+        "source": G + "Dendemann-endlich-nichtschwimmer-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(

@@ -19,3 +19,6 @@ dist/
 
 # Juggler
 .juggler/
+
+# Versehentlich entstehende leere Datei
+backend/.py
