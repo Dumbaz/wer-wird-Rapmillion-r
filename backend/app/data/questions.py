@@ -1860,6 +1860,29 @@ RAW: list[dict] = [
         "year": 2006,
         "source": G + "Deichkind-remmidemmi-yippie-yippie-yeah-lyrics",
     },
+    # ================================================== Jahrgang 2011
+    {
+        "level": 12,
+        "line": "Lieber gestanden arm sterben, als reich leben auf Knien",
+        "answers": ["Casper", "Genetikk", "Dendemann"],
+        "correct": 0,
+        "artist": "Casper",
+        "track": "Michael X",
+        "album": "XOXO",
+        "year": 2011,
+        "source": G + "Casper-michael-x-lyrics",
+    },
+    {
+        "level": 11,
+        "line": "Wir scheitern immer schöner, sind Versager mit Stil",
+        "answers": ["Casper", "Genetikk", "Dendemann"],
+        "correct": 0,
+        "artist": "Casper",
+        "track": "Der Druck steigt (Die Vergessenen Pt. 1)",
+        "album": "XOXO",
+        "year": 2011,
+        "source": G + "Casper-der-druck-steigt-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
