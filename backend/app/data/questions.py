@@ -1697,6 +1697,18 @@ RAW: list[dict] = [
         "year": 2014,
         "source": G + "Cro-traum-lyrics",
     },
+    # ================================================== Jahrgang 2016
+    {
+        "level": 5,
+        "line": "Alle sind happy, denn der Testsieger rappt wieder",
+        "answers": ["Beginner", "Fettes Brot", "Die Fantastischen Vier"],
+        "correct": 0,
+        "artist": "Beginner",
+        "track": "Ahnma",
+        "album": "Advanced Chemistry",
+        "year": 2016,
+        "source": G + "Beginner-ahnma-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
