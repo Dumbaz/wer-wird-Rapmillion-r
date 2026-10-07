@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Melodie von CRO">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(330 0.5 0.5)">
+      <stop offset="0%" stop-color="#8f00ff"/>
+      <stop offset="100%" stop-color="#ff00c8"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <polygon points="179.7,424.4 372.4,703.8 509.6,588.8" fill="none" stroke="#00ffe0" stroke-width="2.6" opacity="0.40"/>
+    <polygon points="399.9,642.7 548.1,413.7 475.0,302.4" fill="none" stroke="#00ffe0" stroke-width="6.6" opacity="0.21"/>
+    <polygon points="468.2,176.0 470.7,177.8 439.6,108.4" fill="none" stroke="#00ffe0" stroke-width="6.1" opacity="0.45"/>
+    <polygon points="555.1,150.7 592.2,161.3 503.3,290.3" fill="none" stroke="#00ffe0" stroke-width="2.6" opacity="0.44"/>
+    <polygon points="260.6,613.8 251.0,469.2 211.7,584.9" fill="none" stroke="#00ffe0" stroke-width="5.2" opacity="0.26"/>
+    <polygon points="339.8,567.8 391.9,623.0 427.9,501.8" fill="none" stroke="#00ffe0" stroke-width="3.6" opacity="0.23"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#00ffe0">CRO</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">MELODIE</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2014</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#00ffe0" stroke-width="6" opacity="0.9"/>
+</svg>

@@ -1685,6 +1685,18 @@ RAW: list[dict] = [
         "year": 2013,
         "source": G + "Casper-im-ascheregen-lyrics",
     },
+    # ================================================== Jahrgang 2014
+    {
+        "level": 2,
+        "line": "Ich bin verliebt und hab' kein'n Plan, ob es dich gibt",
+        "answers": ["CRO", "Marteria", "Casper"],
+        "correct": 0,
+        "artist": "CRO",
+        "track": "Traum",
+        "album": "Melodie",
+        "year": 2014,
+        "source": G + "Cro-traum-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
