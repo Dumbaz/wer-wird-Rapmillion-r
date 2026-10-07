@@ -1553,6 +1553,18 @@ RAW: list[dict] = [
         "year": 1992,
         "source": G + "Die-fantastischen-vier-die-da-lyrics",
     },
+    # ================================================== Jahrgang 1993
+    {
+        "level": 6,
+        "line": "Du bist der Chef auf dein'm Fest / Du bist der Boss, du bist der Held",
+        "answers": ["Die Fantastischen Vier", "Advanced Chemistry", "Fettes Brot"],
+        "correct": 0,
+        "artist": "Die Fantastischen Vier",
+        "track": "Zu geil für diese Welt",
+        "album": "Die 4. Dimension",
+        "year": 1993,
+        "source": G + "Die-fantastischen-vier-zu-geil-fur-diese-welt-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(

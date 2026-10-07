@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Die 4. Dimension von Die Fantastischen Vier">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(24 0.5 0.5)">
+      <stop offset="0%" stop-color="#00c2ff"/>
+      <stop offset="100%" stop-color="#7a00cc"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="36.2" cy="391.7" r="134.2" fill="none" stroke="#fffb00" stroke-width="6.3" opacity="0.52"/>
+    <circle cx="242.0" cy="597.1" r="43.5" fill="none" stroke="#fffb00" stroke-width="8.8" opacity="0.42"/>
+    <circle cx="55.3" cy="428.1" r="126.5" fill="none" stroke="#fffb00" stroke-width="6.4" opacity="0.40"/>
+    <circle cx="303.9" cy="110.4" r="179.8" fill="none" stroke="#fffb00" stroke-width="3.0" opacity="0.22"/>
+    <circle cx="299.4" cy="362.4" r="111.6" fill="none" stroke="#fffb00" stroke-width="5.4" opacity="0.29"/>
+    <circle cx="442.7" cy="574.4" r="155.8" fill="none" stroke="#fffb00" stroke-width="5.3" opacity="0.39"/>
+    <circle cx="72.7" cy="429.3" r="87.2" fill="none" stroke="#fffb00" stroke-width="4.9" opacity="0.39"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="4" fill="#fffb00">DIE FANTASTISCHEN VIER</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">DIE 4. DIMENSION</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">1993</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#fffb00" stroke-width="6" opacity="0.9"/>
+</svg>
