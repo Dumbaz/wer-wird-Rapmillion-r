@@ -1637,6 +1637,18 @@ RAW: list[dict] = [
         "year": 2008,
         "source": G + "Peter-fox-alles-neu-lyrics",
     },
+    # ================================================== Jahrgang 2009
+    {
+        "level": 8,
+        "line": "Ich kaufe zehn Flaschen Sekt, ich werd' 'n Kuchen backen",
+        "answers": ["Sido", "Kool Savas", "Eko Fresh"],
+        "correct": 0,
+        "artist": "Sido",
+        "track": "Geburtstag",
+        "album": "Aggro Berlin",
+        "year": 2009,
+        "source": G + "Sido-geburtstag-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
