@@ -126,3 +126,17 @@ def test_antwortoptionen_ueberschneiden_sich_nicht_personell():
                     f"{q.id}: '{q.answers[i]}' und '{q.answers[j]}' "
                     f"teilen {shared}"
                 )
+
+
+# Crews, bei denen mehrere Mitglieder als Optionen die Frage unnoetig schwer
+# machen (Gzuz, Bonez MC und Maxwell sind alle 187 Strassenbande). Weichere
+# Faelle (Label-Kollegen wie Aggro Berlin) sind bewusst nicht erfasst.
+STRIKTE_GRUPPEN = {"187 strassenbande"}
+
+
+def test_hoechstens_eine_option_pro_strikter_gruppe():
+    for q in QUESTIONS:
+        for group in STRIKTE_GRUPPEN:
+            members = GROUP_MEMBERS[group]
+            hits = [a for a in q.answers if _people(a) & (members | {group})]
+            assert len(hits) < 2, f"{q.id}: {hits} gehoeren alle zu '{group}'"

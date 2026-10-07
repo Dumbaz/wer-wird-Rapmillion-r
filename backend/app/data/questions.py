@@ -149,7 +149,7 @@ RAW: list[dict] = [
     {
         "level": 4,
         "line": "Du hast gedacht, ich mache Spaß, aber keiner hier lacht",
-        "answers": ["Gzuz", "Bonez MC", "Maxwell"],
+        "answers": ["Gzuz", "Capital Bra", "Kontra K"],
         "correct": 0,
         "artist": "Gzuz",
         "track": "¿ Was hast du gedacht ?",
