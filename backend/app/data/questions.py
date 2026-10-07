@@ -1673,6 +1673,18 @@ RAW: list[dict] = [
         "year": 2012,
         "source": G + "Cro-du-lyrics",
     },
+    # ================================================== Jahrgang 2013
+    {
+        "level": 6,
+        "line": "Jede Nacht lang Schlaf, nur Probeliegen für'n Sarg",
+        "answers": ["Casper", "Marteria", "Prinz Pi"],
+        "correct": 0,
+        "artist": "Casper",
+        "track": "Im Ascheregen",
+        "album": "Hinterland",
+        "year": 2013,
+        "source": G + "Casper-im-ascheregen-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
