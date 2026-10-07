@@ -1931,6 +1931,18 @@ RAW: list[dict] = [
         "year": 1999,
         "source": G + "Kinderzimmer-productions-fett-viel-besser-lyrics",
     },
+    # ================================================== Jahrgang 2001
+    {
+        "level": 14,
+        "line": "Die mit dem Kaufhauspunk, und hannoveranischem Rock'n'Roll",
+        "answers": ["Jan Delay", "Curse", "Advanced Chemistry"],
+        "correct": 0,
+        "artist": "Jan Delay",
+        "track": "Ich möchte nicht, dass ihr meine Lieder singt",
+        "album": "Searching for the Jan Soul Rebels",
+        "year": 2001,
+        "source": G + "Jan-delay-ich-mochte-nicht-dass-ihr-meine-lieder-singt-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
