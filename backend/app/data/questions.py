@@ -1709,6 +1709,18 @@ RAW: list[dict] = [
         "year": 2016,
         "source": G + "Beginner-ahnma-lyrics",
     },
+    # ================================================== Jahrgang 2025
+    {
+        "level": 4,
+        "line": "Ich bin schlau, aber blond und supermegahot",
+        "answers": ["Shirin David", "Katja Krasavice", "Ayliva"],
+        "correct": 0,
+        "artist": "Shirin David",
+        "track": "Bauch Beine Po",
+        "album": "Schlau aber blond",
+        "year": 2025,
+        "source": G + "Shirin-david-bauch-beine-po-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
