@@ -1733,6 +1733,40 @@ RAW: list[dict] = [
         "year": 2003,
         "source": G + "Eko-fresh-ich-bin-jung-und-brauche-das-geld-lyrics",
     },
+    # ================================================== Jahrgang 2005
+    {
+        "level": 6,
+        "line": "Und jahrelang war es cooler, blöd auf Englisch zu rappen",
+        "answers": ["Fler", "Massiv", "Azad"],
+        "correct": 0,
+        "artist": "Fler",
+        "track": "NDW 2005",
+        "album": "Neue Deutsche Welle",
+        "year": 2005,
+        "source": G + "Fler-ndw-2005-lyrics",
+    },
+    {
+        "level": 2,
+        "line": "Lass die Finger von Emanuela",
+        "answers": ["Fettes Brot", "Deichkind", "Die Fantastischen Vier"],
+        "correct": 0,
+        "artist": "Fettes Brot",
+        "track": "Emanuela",
+        "album": "Am Wasser gebaut",
+        "year": 2005,
+        "source": G + "Fettes-brot-emanuela-lyrics",
+    },
+    {
+        "level": 5,
+        "line": "Das Radio klingt feist, gestern war in den Top Ten Scheiß",
+        "answers": ["Seeed", "Culcha Candela", "Deichkind"],
+        "correct": 0,
+        "artist": "Seeed",
+        "track": "Aufstehn!",
+        "album": "Next!",
+        "year": 2005,
+        "source": G + "Seeed-aufstehn-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(

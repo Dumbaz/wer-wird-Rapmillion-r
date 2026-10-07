@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Am Wasser gebaut von Fettes Brot">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(240 0.5 0.5)">
+      <stop offset="0%" stop-color="#ffd200"/>
+      <stop offset="100%" stop-color="#ff5f00"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <polygon points="122.2,74.3 133.2,140.9 113.4,177.4" fill="none" stroke="#2b0a3d" stroke-width="3.8" opacity="0.33"/>
+    <polygon points="576.4,385.4 619.1,270.3 378.3,190.4" fill="none" stroke="#2b0a3d" stroke-width="5.4" opacity="0.30"/>
+    <polygon points="105.9,584.2 117.3,450.9 -0.3,618.9" fill="none" stroke="#2b0a3d" stroke-width="6.4" opacity="0.45"/>
+    <polygon points="507.0,347.4 622.5,528.8 639.5,501.4" fill="none" stroke="#2b0a3d" stroke-width="5.3" opacity="0.48"/>
+    <polygon points="459.5,590.5 152.6,656.9 340.9,707.1" fill="none" stroke="#2b0a3d" stroke-width="5.8" opacity="0.35"/>
+    <polygon points="238.2,-10.8 52.1,-30.3 231.1,-35.6" fill="none" stroke="#2b0a3d" stroke-width="4.2" opacity="0.44"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ffd200">FETTES BROT</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">AM WASSER GEBAUT</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2005</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#2b0a3d" stroke-width="6" opacity="0.9"/>
+</svg>
