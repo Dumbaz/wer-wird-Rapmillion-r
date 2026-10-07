@@ -1801,6 +1801,18 @@ RAW: list[dict] = [
         "year": 2017,
         "source": G + "Raf-camora-andere-liga-lyrics",
     },
+    # ================================================== Jahrgang 2019
+    {
+        "level": 5,
+        "line": "Juice-Cover abgesagt, weil ich bin ein Star",
+        "answers": ["Shindy", "Capital Bra", "Ufo361"],
+        "correct": 0,
+        "artist": "Shindy",
+        "track": "Nautilus",
+        "album": "Drama",
+        "year": 2019,
+        "source": G + "Shindy-nautilus-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
