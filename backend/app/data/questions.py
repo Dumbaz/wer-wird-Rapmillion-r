@@ -1919,6 +1919,18 @@ RAW: list[dict] = [
         "year": 2021,
         "source": G + "Shirin-david-bitches-brauchen-rap-lyrics",
     },
+    # ================================================== Jahrgang 1999
+    {
+        "level": 14,
+        "line": "Ich spiel mit Worten wie andere mit Karten Mau-Mau",
+        "answers": ["Kinderzimmer Productions", "Fettes Brot", "Freundeskreis"],
+        "correct": 0,
+        "artist": "Kinderzimmer Productions",
+        "track": "Fett viel besser",
+        "album": "Die hohe Kunst der tiefen Schläge",
+        "year": 1999,
+        "source": G + "Kinderzimmer-productions-fett-viel-besser-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
