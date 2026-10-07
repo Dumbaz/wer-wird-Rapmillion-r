@@ -1541,6 +1541,18 @@ RAW: list[dict] = [
         "year": 2013,
         "source": G + "Mok-rapgame-lyrics",
     },
+    # ================================================== Jahrgang 1992
+    {
+        "level": 3,
+        "line": "Und am Samstag in der Diskothek ließ ich die Korken knallen",
+        "answers": ["Die Fantastischen Vier", "Advanced Chemistry", "Fresh Familee"],
+        "correct": 0,
+        "artist": "Die Fantastischen Vier",
+        "track": "Die da!?!",
+        "album": "4 gewinnt",
+        "year": 1992,
+        "source": G + "Die-fantastischen-vier-die-da-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(

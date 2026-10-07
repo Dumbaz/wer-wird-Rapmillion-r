@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="4 gewinnt von Die Fantastischen Vier">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(112 0.5 0.5)">
+      <stop offset="0%" stop-color="#8f00ff"/>
+      <stop offset="100%" stop-color="#ff00c8"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="318.4" cy="157.8" r="112.6" fill="none" stroke="#00ffe0" stroke-width="6.8" opacity="0.48"/>
+    <circle cx="3.3" cy="546.7" r="79.9" fill="none" stroke="#00ffe0" stroke-width="4.9" opacity="0.33"/>
+    <circle cx="450.2" cy="534.3" r="86.8" fill="none" stroke="#00ffe0" stroke-width="5.7" opacity="0.49"/>
+    <circle cx="384.2" cy="313.1" r="88.8" fill="none" stroke="#00ffe0" stroke-width="4.3" opacity="0.47"/>
+    <circle cx="563.8" cy="326.6" r="75.6" fill="none" stroke="#00ffe0" stroke-width="2.2" opacity="0.24"/>
+    <circle cx="591.8" cy="315.0" r="180.2" fill="none" stroke="#00ffe0" stroke-width="7.0" opacity="0.43"/>
+    <circle cx="334.1" cy="7.2" r="173.2" fill="none" stroke="#00ffe0" stroke-width="7.7" opacity="0.51"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="438" width="600" height="162" fill="#000" opacity="0.58"/>
+    <text x="52" y="484" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="4" fill="#00ffe0">DIE FANTASTISCHEN VIER</text>
+    <text x="52" y="538" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">4 GEWINNT</tspan>
+    </text>
+    <text x="548" y="484" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">1992</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#00ffe0" stroke-width="6" opacity="0.9"/>
+</svg>
