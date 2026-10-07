@@ -1589,6 +1589,18 @@ RAW: list[dict] = [
         "year": 1995,
         "source": G + "Die-fantastischen-vier-sie-ist-weg-lyrics",
     },
+    # ================================================== Jahrgang 1996
+    {
+        "level": 7,
+        "line": "Einsam geh ich durch die Straßen, durch den Regen, durch die Nacht",
+        "answers": ["Tic Tac Toe", "Fettes Brot", "Cora E."],
+        "correct": 0,
+        "artist": "Tic Tac Toe",
+        "track": "Verpiss dich",
+        "album": "Tic Tac Toe",
+        "year": 1996,
+        "source": G + "Tic-tac-toe-verpiss-dich-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
