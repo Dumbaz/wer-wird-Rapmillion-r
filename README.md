@@ -61,7 +61,7 @@ ein einziger Prozess auf Port 8000.
 |---|---|
 | 15 Stufen | Von 50 € bis 1.000.000 €, Schwierigkeit steigt kontinuierlich |
 | Sicherheitsstufen | Bei 500 € (Stufe 5) und 16.000 € (Stufe 10) |
-| 135 Fragen | 9 pro Stufe, pro Runde zufällig gezogen, Antworten gemischt |
+| 135+ Fragen | mindestens 9 pro Stufe, pro Runde zufällig gezogen, Antworten gemischt |
 | Belegte Zitate | Jede Zeile ist wörtlich gegen ihre Genius-Quelle verifiziert |
 | 3 Joker | Fifty-Fifty, Publikumsjoker, Skip (neue Frage auf gleicher Stufe) |
 | Aussteigen | Gewinn jederzeit sichern |
@@ -144,7 +144,7 @@ cd ../frontend
 npm run typecheck
 ```
 
-Abgedeckt: Datenqualität des Katalogs (gleich viele Fragen pro Stufe, drei
+Abgedeckt: Datenqualität des Katalogs (mindestens 9 Fragen pro Stufe, drei
 eindeutige Antworten, Künstlername nicht in der Zeile, keine doppelten Zeilen
 oder Songs), Quellenpflicht, Existenz aller Cover, kompletter Durchlauf bis zur
 Million, Sicherheitsstufen, Cash-out, alle drei Joker und die Zusicherung, dass
@@ -214,8 +214,8 @@ python -m pytest tests -q
 
 - Die Zeile muss buchstabengetreu von der unter `source` angegebenen Seite
   stammen. Nichts aus dem Gedächtnis zitieren.
-- Alle Stufen müssen gleich viele Fragen haben (Test erzwingt das) – Fragen
-  also immer stufenübergreifend in gleicher Anzahl ergänzen.
+- Jede Stufe braucht mindestens 9 Fragen (Test erzwingt das); die Stufen dürfen
+  unterschiedlich groß sein.
 - Fragen-IDs (`q001` …) ergeben sich aus der Position in `RAW`. Einfügen in der
   Mitte verschiebt alle folgenden IDs.
 - Der Cover-Dateiname wird automatisch aus Artist und Album abgeleitet

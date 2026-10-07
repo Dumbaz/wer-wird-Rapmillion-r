@@ -31,13 +31,14 @@ def new_game() -> dict:
 
 # --------------------------------------------------------------- Datenqualitaet
 def test_katalog_hat_genug_fragen_pro_level():
-    """Jede Stufe braucht mehrere Fragen, damit Runden sich unterscheiden."""
+    """Jede Stufe braucht mehrere Fragen, damit Runden sich unterscheiden.
+
+    Die Stufen muessen nicht gleich gross sein: der Katalog waechst jahrgangs-
+    weise, und nicht jedes Jahr gibt in jeder Schwierigkeit etwas her.
+    """
     assert len(QUESTIONS) >= 45
     for level in range(1, MAX_LEVEL + 1):
-        assert len(QUESTIONS_BY_LEVEL[level]) >= 3, f"Level {level}"
-
-    counts = {len(v) for v in QUESTIONS_BY_LEVEL.values()}
-    assert len(counts) == 1, f"Stufen ungleich gefuellt: {counts}"
+        assert len(QUESTIONS_BY_LEVEL[level]) >= 9, f"Level {level}"
 
 
 def test_jede_frage_hat_drei_eindeutige_antworten():

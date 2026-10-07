@@ -67,8 +67,8 @@ frontend/src/components/       StartScreen, Ladder, AnswerButton, Lifelines, Cov
    Never write, "fix", or paraphrase a lyric from memory. An earlier catalog
    contained invented lines; that's why `verify_sources.py` and the
    source-required test exist. If you can't verify a line, don't add it.
-3. **Every level has the same number of questions** (currently 9 × 15 = 135).
-   Tests enforce equal counts and ≥ 3 per level.
+3. **Every level needs at least 9 questions** (test-enforced). Levels may differ
+   in size; the catalog grows year by year.
 4. **Catalog entry rules** (enforced by tests): exactly 3 unique answers;
    `answers[correct] == artist`; artist name (tokens ≥ 4 chars) must not appear
    in the line; no duplicate lines or songs; no two answer options share a person
