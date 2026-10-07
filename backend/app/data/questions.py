@@ -1767,6 +1767,40 @@ RAW: list[dict] = [
         "year": 2005,
         "source": G + "Seeed-aufstehn-lyrics",
     },
+    # ================================================== Jahrgang 2017
+    {
+        "level": 6,
+        "line": "Alles schon gesehen, alles schon gewohnt / Alles schon erlebt, unterhalt uns, los!",
+        "answers": ["Casper", "Marteria", "Prinz Pi"],
+        "correct": 0,
+        "artist": "Casper",
+        "track": "Lang lebe der Tod",
+        "album": "Lang lebe der Tod",
+        "year": 2017,
+        "source": G + "Casper-lang-lebe-der-tod-lyrics",
+    },
+    {
+        "level": 5,
+        "line": "Kornkreise verwandeln sich zu Mosh-Pits / Endlich fühl' ich mich lebendig",
+        "answers": ["Marteria", "Cro", "Prinz Pi"],
+        "correct": 0,
+        "artist": "Marteria",
+        "track": "Roswell",
+        "album": "Roswell",
+        "year": 2017,
+        "source": G + "Marteria-roswell-lyrics",
+    },
+    {
+        "level": 4,
+        "line": "Ihre großen Brüder machen alle Para, fahren Audis",
+        "answers": ["RAF Camora", "Kontra K", "Farid Bang"],
+        "correct": 0,
+        "artist": "RAF Camora",
+        "track": "Andere Liga",
+        "album": "Anthrazit",
+        "year": 2017,
+        "source": G + "Raf-camora-andere-liga-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
