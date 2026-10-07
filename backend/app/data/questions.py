@@ -1907,6 +1907,18 @@ RAW: list[dict] = [
         "year": 2020,
         "source": G + "Apache-207-fame-lyrics",
     },
+    # ================================================== Jahrgang 2021
+    {
+        "level": 8,
+        "line": "Ghostwriter was? Schreib' Songs mit Laas",
+        "answers": ["Shirin David", "Loredana", "Katja Krasavice"],
+        "correct": 0,
+        "artist": "Shirin David",
+        "track": "Bitches brauchen Rap",
+        "album": "Bitches brauchen Rap",
+        "year": 2021,
+        "source": G + "Shirin-david-bitches-brauchen-rap-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
