@@ -1613,6 +1613,18 @@ RAW: list[dict] = [
         "year": 1997,
         "source": G + "Sabrina-setlur-du-liebst-mich-nicht-lyrics",
     },
+    # ================================================== Jahrgang 1998
+    {
+        "level": 11,
+        "line": "Stille Wasser sind tief, du bist der Marianengraben",
+        "answers": ["Fettes Brot", "Beginner", "Fünf Sterne Deluxe"],
+        "correct": 0,
+        "artist": "Fettes Brot",
+        "track": "Lieblingslied",
+        "album": "Fettes Brot lässt grüßen",
+        "year": 1998,
+        "source": G + "Fettes-brot-lieblingslied-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
