@@ -1,14 +1,59 @@
 # Wer wird Rapmillionär – Deutschrap-Quiz
 
 Ein Quiz im Stil von „Wer wird Millionär": Eine bekannte Line aus dem deutschen
-Rap wird gezeigt, drei Antworten stehen zur Auswahl. Wer richtig liegt, steigt
-die Gewinnleiter hinauf – bis zur Million. Bei jeder Auflösung wird das
-Albumcover eingeblendet.
+Rap wird gezeigt, drei Künstler stehen zur Auswahl. Wer richtig liegt, steigt
+die Gewinnleiter hinauf – bis zur Million. Bei jeder Auflösung werden Track,
+Album, Jahr, Albumcover und ein Link zum vollständigen Songtext eingeblendet.
 
-- **Backend:** Python + FastAPI (Antwortprüfung passiert serverseitig)
-- **Frontend:** React + TypeScript + Vite
-- **Sounds:** komplett über die Web Audio API synthetisiert – keine Audiodateien
-- **Albumcover:** generierte SVGs, ausschließlich in `backend/static/covers/`
+| Bereich | Technik |
+|---|---|
+| Backend | Python ≥ 3.11, FastAPI, Pydantic v2 – Antwortprüfung passiert serverseitig |
+| Frontend | React 18, TypeScript (strict), Vite 6 |
+| Sounds | Komplett über die Web Audio API synthetisiert – keine Audiodateien |
+| Albumcover | Generierte SVGs, ausschließlich in `backend/static/covers/` |
+| Tests | pytest (API + Katalog), Playwright (visueller Smoke-Test) |
+
+> Für KI-Agenten und neue Mitwirkende: Arbeitsregeln, Invarianten und Fallstricke
+> stehen in [`AGENTS.md`](AGENTS.md).
+
+## Schnellstart
+
+Voraussetzungen: Python ≥ 3.11, Node ≥ 18.
+
+```bash
+./start.sh          # Produktion: baut das Frontend, alles auf http://127.0.0.1:8000
+./start.sh --dev    # Entwicklung: Backend mit --reload (:8000) + Vite (:5173)
+PORT=9000 ./start.sh
+```
+
+Das Skript legt beim ersten Lauf venv und `node_modules` selbst an und baut
+das Frontend nur neu, wenn sich die Quellen geändert haben. Manuell geht es so:
+
+```bash
+# Terminal 1 – Backend (http://127.0.0.1:8000, API-Doku unter /docs)
+cd backend
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements-dev.txt
+uvicorn app.main:app --reload
+
+# Terminal 2 – Frontend (http://localhost:5173)
+cd frontend
+npm install
+npm run dev
+```
+
+Der Vite-Dev-Server proxied `/api` und `/covers` auf Port 8000. Die Cover sind
+eingecheckt; `python tools/gen_covers.py` ist nur nach Katalogänderungen nötig.
+
+### Produktion
+
+```bash
+cd frontend && npm run build
+cd ../backend && uvicorn app.main:app
+```
+
+Existiert `frontend/dist/`, liefert FastAPI das Frontend unter `/` gleich mit aus –
+ein einziger Prozess auf Port 8000.
 
 ## Features
 
@@ -16,18 +61,165 @@ Albumcover eingeblendet.
 |---|---|
 | 15 Stufen | Von 50 € bis 1.000.000 €, Schwierigkeit steigt kontinuierlich |
 | Sicherheitsstufen | Bei 500 € (Stufe 5) und 16.000 € (Stufe 10) |
-| 135 Fragen | 9 pro Stufe, 100 Künstler, pro Runde zufällig gezogen und gemischt |
+| 135 Fragen | 9 pro Stufe, pro Runde zufällig gezogen, Antworten gemischt |
 | Belegte Zitate | Jede Zeile ist wörtlich gegen ihre Genius-Quelle verifiziert |
-| 3 Joker | Fifty-Fifty, Publikumsjoker, Skip |
-| Aussteigen | Gewinn jederzeit ab Stufe 2 sichern |
+| 3 Joker | Fifty-Fifty, Publikumsjoker, Skip (neue Frage auf gleicher Stufe) |
+| Aussteigen | Gewinn jederzeit sichern |
 | Cover-Reveal | Albumcover, Track, Album, Jahr und Quellenlink nach jeder Antwort |
 | Funky Sounds | Arpeggio bei richtig, Bass-Wobble + Scratch bei falsch, Fanfare bei der Million |
-| Reload-fest | Laufende Session wird über `localStorage` wiederhergestellt |
+| Runde fortsetzen | Die Session-ID liegt in `localStorage`; eine laufende Runde wird auf dem Startbildschirm zum Fortsetzen angeboten (nicht automatisch geladen) |
 
 Schwierigkeitskurve: Stufe 1–5 Chart-Hits (Apache 207, Haftbefehl, Bausa, Juju,
 SSIO), 6–10 bekannte Punchlines und Szenegrößen (K.I.Z, Kollegah, OG Keemo,
 Antilopen Gang, Haiyti), 11–15 Klassiker und Underground (Advanced Chemistry
 1992, Torch, Morlockk Dilemma, Huss und Hodn, Absztrakkt, Main Concept).
+
+## Architektur
+
+```
+Browser (React)  ──/api──▶  FastAPI (routes.py)  ──▶  game.py (Session, Joker, Leiter)
+       │                                                   │
+       └──/covers──▶  StaticFiles(backend/static/covers)   └──▶ data/questions.py (Katalog)
+```
+
+- **Sessions** liegen im Speicher (`SessionStore` in `game.py`, TTL 6 h). Ein
+  Neustart des Backends verwirft alle laufenden Runden. Der Store ist hinter
+  einem schmalen Interface gekapselt, damit später Redis/SQLite möglich ist.
+- **Die Lösung verlässt den Server erst mit der Antwort auf `/answer`.** Der
+  Client bekommt nur `PublicQuestion` (ohne `correct_index`) – Cheaten über die
+  DevTools ist nicht möglich.
+- **Typen** existieren doppelt: Pydantic in `backend/app/models.py`, TypeScript
+  in `frontend/src/types.ts`. Beide müssen synchron gehalten werden.
+
+### API
+
+| Methode | Pfad | Zweck |
+|---|---|---|
+| `POST` | `/api/game` | Neue Runde starten (201) |
+| `GET` | `/api/game/{id}` | Aktuellen Spielzustand abrufen |
+| `POST` | `/api/game/{id}/answer` | Antwort prüfen (`{"answer_index": 0-2}`), Song aufdecken |
+| `POST` | `/api/game/{id}/lifeline` | Joker einsetzen (`fifty_fifty` \| `publikum` \| `skip`) |
+| `POST` | `/api/game/{id}/cashout` | Aussteigen |
+| `GET` | `/api/health` | Health-Check |
+| `GET` | `/covers/{datei}.svg` | Albumcover |
+| `GET` | `/docs` | Interaktive OpenAPI-Doku |
+
+Fehler: `404` für unbekannte Sessions, `409` für fachlich ungültige Aktionen
+(Spiel beendet, Joker verbraucht).
+
+### Projektstruktur
+
+```
+backend/
+├── app/
+│   ├── main.py            FastAPI-App, CORS, Static Mounts (Cover + optional dist/)
+│   ├── models.py          Pydantic-Schemas
+│   ├── game.py            Gewinnleiter, Sicherheitsstufen, Sessions, Joker
+│   ├── routes.py          API-Endpunkte
+│   └── data/questions.py  Fragenkatalog (Liste RAW)
+├── static/covers/         NUR Albumcover (generierte SVGs, eingecheckt)
+├── tools/
+│   ├── gen_covers.py      Cover-Generator (deterministisch, entfernt verwaiste Cover)
+│   └── verify_sources.py  Quellenprüfung der Zitate gegen Genius
+└── tests/test_api.py      Katalog- und API-Tests
+
+frontend/
+├── src/
+│   ├── App.tsx            Spielzustandsmaschine
+│   ├── api.ts  types.ts   API-Client und Typen
+│   ├── audio/sfx.ts       Web-Audio-Sound-Engine
+│   └── components/        StartScreen, Ladder, AnswerButton, Lifelines, CoverReveal, GameOver
+├── scripts/screenshot.mjs Playwright-Smoke-Test
+└── vite.config.ts         Dev-Proxy auf :8000
+```
+
+## Tests
+
+```bash
+cd backend
+pip install -r requirements-dev.txt
+python -m pytest tests -q
+
+cd ../frontend
+npm run typecheck
+```
+
+Abgedeckt: Datenqualität des Katalogs (gleich viele Fragen pro Stufe, drei
+eindeutige Antworten, Künstlername nicht in der Zeile, keine doppelten Zeilen
+oder Songs), Quellenpflicht, Existenz aller Cover, kompletter Durchlauf bis zur
+Million, Sicherheitsstufen, Cash-out, alle drei Joker und die Zusicherung, dass
+die Lösung nie vor der Antwort an den Client geht.
+
+### Quellenprüfung
+
+Lädt die Genius-Seiten (Netzwerk nötig) und schlägt fehl, sobald eine Zeile
+dort nicht wörtlich auffindbar ist:
+
+```bash
+cd backend
+python tools/verify_sources.py          # alle Einträge
+python tools/verify_sources.py q003     # einzelne IDs
+```
+
+Aktueller Stand: **135/135 Zeilen wörtlich belegt.**
+
+Dieses Skript existiert aus gutem Grund: Eine frühere Fassung des Katalogs
+enthielt 43 von 45 **frei erfundenen** Zeilen sowie zahlreiche falsche Alben und
+Jahreszahlen. Der Katalog wurde daraufhin vollständig neu aufgebaut. `source`
+ist seitdem Pflichtfeld, und `tests/test_api.py` lehnt Einträge ohne
+Genius-Quelle ab.
+
+### Visueller Test
+
+Klickt das Quiz mit Playwright wie ein echter User durch, prüft, ob die
+Albumcover tatsächlich laden, und legt Screenshots in `/tmp/shots` ab:
+
+```bash
+cd frontend && npm run build
+cd ../backend && uvicorn app.main:app --port 8014 &
+cd ../frontend && npx playwright install chromium   # einmalig
+npm run shots                                       # QUIZ_URL überschreibt die Ziel-URL
+```
+
+Der Lauf schlägt fehl, sobald ein Cover nicht lädt oder ein Konsolen- bzw.
+Netzwerkfehler auftritt.
+
+## Fragen ergänzen
+
+Neuen Eintrag in `backend/app/data/questions.py` in die Liste `RAW` einfügen:
+
+```python
+{
+    "level": 7,                      # 1–15
+    "line": "…",                     # buchstabengetreu von der Quelle
+    "answers": ["Richtig", "Falsch A", "Falsch B"],
+    "correct": 0,                    # answers[correct] muss == artist sein
+    "artist": "Richtig",
+    "track": "…",
+    "album": "…",
+    "year": 2015,
+    "source": G + "Artist-track-lyrics",
+},
+```
+
+Danach:
+
+```bash
+python tools/gen_covers.py        # erzeugt das Cover
+python tools/verify_sources.py    # belegt die Zeile gegen die Quelle
+python -m pytest tests -q
+```
+
+**Regeln:**
+
+- Die Zeile muss buchstabengetreu von der unter `source` angegebenen Seite
+  stammen. Nichts aus dem Gedächtnis zitieren.
+- Alle Stufen müssen gleich viele Fragen haben (Test erzwingt das) – Fragen
+  also immer stufenübergreifend in gleicher Anzahl ergänzen.
+- Fragen-IDs (`q001` …) ergeben sich aus der Position in `RAW`. Einfügen in der
+  Mitte verschiebt alle folgenden IDs.
+- Der Cover-Dateiname wird automatisch aus Artist und Album abgeleitet
+  (`<artist>--<album>.svg`), verwaiste Cover werden vom Generator entfernt.
 
 ## Herkunft der Zitate
 
@@ -50,146 +242,8 @@ Der Filter greift nicht nur auf die zitierte Zeile, sondern auf den **gesamten
 Songtext**. Gerade im Berliner Battle Rap führte das zu vielen Ausweichfällen —
 bei MC Bomber, Taktloss, B-Tight, MOK, SpongeBOZZ, 4tune und Bass Sultan Hengzt
 mussten die jeweils meistgesehenen Songs verworfen und ein sauberer Track
-desselben Künstlers gewählt werden. Ein Skript prüft alle Zeilen gegen eine
-Sperrwortliste: aktuell 0 Treffer.
-
-## Setup
-
-Voraussetzungen: Python ≥ 3.11, Node ≥ 18.
-
-### Backend
-
-```bash
-cd backend
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python tools/gen_covers.py      # erzeugt die Albumcover
-uvicorn app.main:app --reload   # http://127.0.0.1:8000
-```
-
-### Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev                     # http://localhost:5173
-```
-
-Der Vite-Dev-Server proxied `/api` und `/covers` auf Port 8000.
-
-### Produktion
-
-```bash
-cd frontend && npm run build
-cd ../backend && uvicorn app.main:app
-```
-
-Liegt `frontend/dist/`, liefert FastAPI das Frontend unter `/` gleich mit aus –
-ein einziger Prozess auf Port 8000.
-
-## Tests
-
-```bash
-cd backend
-pip install -r requirements-dev.txt
-python -m pytest tests -q
-```
-
-Abgedeckt: Datenqualität des Katalogs, Quellenpflicht, Existenz aller Cover,
-kompletter Durchlauf bis zur Million, Sicherheitsstufen-Logik, Cash-out, alle
-drei Joker und die Zusicherung, dass die Lösung nie an den Client geht, bevor
-geantwortet wurde. Zusätzlich wird geprüft, dass keine Zeile den Künstlernamen
-enthält und kein Song doppelt vorkommt.
-
-### Quellenprüfung
-
-Fährt alle 45 Zeilen gegen ihre Genius-Seiten und schlägt fehl, sobald eine
-Zeile dort nicht wörtlich auffindbar ist:
-
-```bash
-cd backend
-python tools/verify_sources.py          # alle 135 Einträge
-python tools/verify_sources.py q003     # einzelne ID
-```
-
-Aktueller Stand: **135/135 Zeilen wörtlich belegt.**
-
-Dieses Skript existiert aus gutem Grund: Eine frühere Fassung des Katalogs
-enthielt 43 von 45 **frei erfundenen** Zeilen sowie zahlreiche falsche Alben und
-Jahreszahlen. Der Katalog wurde daraufhin vollständig neu aufgebaut. `source_url`
-ist seitdem Pflichtfeld, und `tests/test_api.py` lehnt Einträge ohne Quelle ab.
-
-### Visueller Test
-
-Klickt das Quiz mit Playwright wie ein echter User durch, prüft dabei, ob die
-Albumcover tatsächlich laden, und legt Screenshots in `/tmp/shots` ab:
-
-```bash
-cd backend && uvicorn app.main:app --port 8014 &   # Frontend vorher bauen
-cd frontend && npm run shots
-```
-
-Der Lauf schlägt fehl, sobald ein Cover nicht lädt oder ein Konsolen- bzw.
-Netzwerkfehler auftritt.
-
-## API
-
-| Methode | Pfad | Zweck |
-|---|---|---|
-| `POST` | `/api/game` | Neue Runde starten |
-| `GET` | `/api/game/{id}` | Aktuellen Spielzustand abrufen |
-| `POST` | `/api/game/{id}/answer` | Antwort prüfen, Song aufdecken |
-| `POST` | `/api/game/{id}/lifeline` | Joker einsetzen |
-| `POST` | `/api/game/{id}/cashout` | Aussteigen |
-| `GET` | `/covers/{datei}.svg` | Albumcover |
-| `GET` | `/docs` | Interaktive OpenAPI-Doku |
-
-Die richtige Antwort verlässt den Server erst mit der Antwort auf
-`/answer` – Cheaten über die DevTools ist damit nicht möglich.
-
-## Projektstruktur
-
-```
-backend/
-├── app/
-│   ├── main.py            FastAPI-App, CORS, Static Mounts
-│   ├── models.py          Pydantic-Schemas
-│   ├── game.py            Gewinnleiter, Sessions, Joker
-│   ├── routes.py          API-Endpunkte
-│   └── data/questions.py  Fragenkatalog
-├── static/covers/         NUR Albumcover (44 SVGs)
-├── tools/
-│   ├── gen_covers.py      Cover-Generator
-│   └── verify_sources.py  Quellenprüfung der Zitate
-└── tests/test_api.py
-
-frontend/src/
-├── App.tsx                Spielzustandsmaschine
-├── api.ts  types.ts       API-Client
-├── audio/sfx.ts           Web-Audio-Sound-Engine
-└── components/            Ladder, AnswerButton, CoverReveal, Lifelines, …
-```
-
-## Fragen ergänzen
-
-Neuen Eintrag in `backend/app/data/questions.py` in die Liste `RAW` einfügen
-(`level`, `line`, `answers`, `correct`, `artist`, `track`, `album`, `year`,
-`source`). Danach:
-
-```bash
-python tools/gen_covers.py        # erzeugt das Cover
-python tools/verify_sources.py    # belegt die Zeile gegen die Quelle
-python -m pytest tests -q
-```
-
-**Regel:** Die Zeile muss buchstabengetreu von der unter `source` angegebenen
-Seite stammen. Nichts aus dem Gedächtnis zitieren – `verify_sources.py` fällt
-sonst durch. Der Cover-Name wird automatisch aus Artist und Album abgeleitet,
-verwaiste Cover werden entfernt.
-
-Echte Cover können jederzeit als `backend/static/covers/<artist>--<album>.svg`
-hinterlegt werden; der Generator überschreibt sie allerdings beim nächsten Lauf.
+desselben Künstlers gewählt werden. Die Prüfung erfolgt bei der Aufnahme neuer
+Zeilen; im Repository existiert dafür (noch) kein automatisiertes Skript.
 
 ## Rechtliches
 

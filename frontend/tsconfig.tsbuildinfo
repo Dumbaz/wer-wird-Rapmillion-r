@@ -1,1 +1,0 @@
-{"root":["./src/app.tsx","./src/api.ts","./src/main.tsx","./src/types.ts","./src/audio/sfx.ts","./src/components/answerbutton.tsx","./src/components/coverreveal.tsx","./src/components/gameover.tsx","./src/components/ladder.tsx","./src/components/lifelines.tsx","./src/components/startscreen.tsx","./vite.config.ts"],"version":"5.9.3"}
