@@ -1625,6 +1625,18 @@ RAW: list[dict] = [
         "year": 1998,
         "source": G + "Fettes-brot-lieblingslied-lyrics",
     },
+    # ================================================== Jahrgang 2008
+    {
+        "level": 3,
+        "line": "Motte die Klamotten ein und dann geh' ich nackt shoppen",
+        "answers": ["Peter Fox", "Marteria", "Casper"],
+        "correct": 0,
+        "artist": "Peter Fox",
+        "track": "Alles neu",
+        "album": "Stadtaffe",
+        "year": 2008,
+        "source": G + "Peter-fox-alles-neu-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
