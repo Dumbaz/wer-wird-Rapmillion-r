@@ -28,7 +28,7 @@ All backend commands run from `backend/` with the venv active
 | Start everything | `./start.sh` (prod, :8000) or `./start.sh --dev` (backend :8000 + Vite :5173); bootstraps venv/node_modules |
 | Install backend | `python3 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt` |
 | Run backend | `uvicorn app.main:app --reload` (port 8000) |
-| Backend tests | `python -m pytest tests -q` (22 tests, < 2 s) |
+| Backend tests | `python -m pytest tests -q` (23 tests, < 2 s) |
 | Verify quotes | `python tools/verify_sources.py [q001 …]` (needs network, hits genius.com) |
 | Regenerate covers | `python tools/gen_covers.py` |
 | Install frontend | `cd frontend && npm install` |
@@ -71,7 +71,8 @@ frontend/src/components/       StartScreen, Ladder, AnswerButton, Lifelines, Cov
    Tests enforce equal counts and ≥ 3 per level.
 4. **Catalog entry rules** (enforced by tests): exactly 3 unique answers;
    `answers[correct] == artist`; artist name (tokens ≥ 4 chars) must not appear
-   in the line; no duplicate lines or songs; `source` is `https://genius.com/…-lyrics`.
+   in the line; no duplicate lines or songs; no two answer options share a person
+   (group + member, e.g. `187 Strassenbande` vs `Gzuz`; extend `GROUP_MEMBERS` in the test); `source` is `https://genius.com/…-lyrics`.
 5. **Content filter:** crude/vulgar lines are fine (genre), but exclude homophobic
    slurs, xenophobic/racist terms, Nazi comparisons and ableist insults — checked
    against the *whole song*, not just the quoted line. This is a manual check;

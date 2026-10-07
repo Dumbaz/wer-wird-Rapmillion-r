@@ -81,7 +81,7 @@ RAW: list[dict] = [
     {
         "level": 2,
         "line": "Über den Dächern meiner Stadt riecht die Luft nach Marihuana",
-        "answers": ["Bonez MC & RAF Camora", "187 Strassenbande", "Gzuz"],
+        "answers": ["Bonez MC & RAF Camora", "Capital Bra & Samra", "Kontra K"],
         "correct": 0,
         "artist": "Bonez MC & RAF Camora",
         "track": "Palmen aus Plastik",
@@ -262,7 +262,7 @@ RAW: list[dict] = [
     {
         "level": 7,
         "line": "Steck mal dein Messer weg und lerne mit einer Gabel umzugeh'n",
-        "answers": ["Trailerpark", "K.I.Z", "Alligatoah"],
+        "answers": ["Trailerpark", "K.I.Z", "Antilopen Gang"],
         "correct": 0,
         "artist": "Trailerpark",
         "track": "Fledermausland",
@@ -432,7 +432,7 @@ RAW: list[dict] = [
     {
         "level": 12,
         "line": "Ich bin zu wortgewandt, du Horst, du Hans",
-        "answers": ["Berlins Most Wanted", "Sido & Bushido", "Aggro Berlin"],
+        "answers": ["Berlins Most Wanted", "Kollegah & Farid Bang", "K.I.Z"],
         "correct": 0,
         "artist": "Berlins Most Wanted",
         "track": "Berlins Most Wanted",
@@ -614,7 +614,7 @@ RAW: list[dict] = [
     {
         "level": 4,
         "line": "Niemand sieht mich komm'n, aber alle hör'n mich wichsen",
-        "answers": ["Trailerpark", "K.I.Z", "Alligatoah"],
+        "answers": ["Trailerpark", "K.I.Z", "Antilopen Gang"],
         "correct": 0,
         "artist": "Trailerpark",
         "track": "Aragorn",
@@ -636,7 +636,7 @@ RAW: list[dict] = [
     {
         "level": 5,
         "line": "Irgendwo tief in mir bin ich ein Kind geblieben",
-        "answers": ["Bushido & Sido", "Kollegah & Farid Bang", "Berlins Most Wanted"],
+        "answers": ["Bushido & Sido", "Kollegah & Farid Bang", "Snaga & Pillath"],
         "correct": 0,
         "artist": "Bushido & Sido",
         "track": "Erwachsen sein",
@@ -834,7 +834,7 @@ RAW: list[dict] = [
     {
         "level": 14,
         "line": "Es geht mir gut, es geht mir sehr sehr gut",
-        "answers": ["Eins Zwo", "Doppelkopf", "Dendemann"],
+        "answers": ["Eins Zwo", "Doppelkopf", "Fischmob"],
         "correct": 0,
         "artist": "Eins Zwo",
         "track": "Danke, Gut",
@@ -1112,7 +1112,7 @@ RAW: list[dict] = [
     {
         "level": 11,
         "line": "Curse stirbt an 'ner Überdosis Tee / Du kaufst ein Album von Moses P",
-        "answers": ["Huss und Hodn", "Retrogott", "Morlockk Dilemma"],
+        "answers": ["Huss und Hodn", "Prezident", "Morlockk Dilemma"],
         "correct": 0,
         "artist": "Huss und Hodn",
         "track": "Yo, Kurt",
@@ -1156,7 +1156,7 @@ RAW: list[dict] = [
     {
         "level": 13,
         "line": "Ich offeriere Pfeifenträume für die geistig armen",
-        "answers": ["Hiob", "Morlockk Dilemma", "Absztrakkt"],
+        "answers": ["Hiob", "Prezident", "Absztrakkt"],
         "correct": 0,
         "artist": "Hiob",
         "track": "Kapitalismus jetzt",
@@ -1167,7 +1167,7 @@ RAW: list[dict] = [
     {
         "level": 14,
         "line": "Du reagierst auf dope Flows wie ein Sieb",
-        "answers": ["Retrogott", "Huss und Hodn", "Umse"],
+        "answers": ["Retrogott", "Main Concept", "Umse"],
         "correct": 0,
         "artist": "Retrogott",
         "track": "Ein$note",

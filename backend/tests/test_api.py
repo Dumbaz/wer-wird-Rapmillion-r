@@ -245,3 +245,44 @@ def test_antworten_werden_gemischt():
         sid = new_game()["session_id"]
         positions.add(correct_index(sid))
     assert len(positions) > 1
+
+
+# ------------------------------------------- Keine Mehrdeutigkeit bei Gruppen
+# Gruppe/Duo -> Mitglieder bzw. Alias. Zwei Antwortoptionen einer Frage duerfen
+# keine gemeinsame Person enthalten (z. B. "187 Strassenbande" und "Gzuz"),
+# sonst ist die Frage unfair mehrdeutig.
+GROUP_MEMBERS: dict[str, set[str]] = {
+    "187 strassenbande": {"gzuz", "bonez mc", "maxwell", "lx", "sa4"},
+    "bonez mc & raf camora": {"bonez mc", "raf camora"},
+    "berlins most wanted": {"bushido", "fler", "kay one", "bass sultan hengzt", "silla"},
+    "aggro berlin": {"sido", "b-tight", "bushido", "fler"},
+    "huss und hodn": {"retrogott", "hulk hodn"},
+    "retrogott": {"retrogott"},
+    "antilopen gang": {"koljah", "panik panzer", "danger dan"},
+    "trailerpark": {"alligatoah", "timi hendrix", "sudden"},
+    "mc bomber & mecstreem": {"mc bomber", "mecstreem"},
+    "mc bomber": {"mc bomber"},
+    "mecstreem": {"mecstreem"},
+    "hiob": {"hiob"},
+    "morlockk dilemma": {"morlockk dilemma"},
+}
+
+
+def _people(option: str) -> set[str]:
+    key = option.casefold()
+    if key in GROUP_MEMBERS:
+        return GROUP_MEMBERS[key] | {key}
+    parts = {p.strip() for p in key.replace(" und ", " & ").split("&")}
+    return parts | {key}
+
+
+def test_antwortoptionen_ueberschneiden_sich_nicht_personell():
+    for q in QUESTIONS:
+        sets = [_people(a) for a in q.answers]
+        for i in range(3):
+            for j in range(i + 1, 3):
+                shared = sets[i] & sets[j]
+                assert not shared, (
+                    f"{q.id}: '{q.answers[i]}' und '{q.answers[j]}' "
+                    f"teilen {shared}"
+                )
