@@ -1,23 +1,24 @@
 #!/usr/bin/env bash
-# Startet das komplette Spiel: Backend + Frontend.
+# Startet das Spiel (rein statische Seite, kein Server-Backend noetig).
 #
-#   ./start.sh          Produktionsmodus: baut das Frontend, ein Prozess auf :8000
-#   ./start.sh --dev    Entwicklungsmodus: uvicorn --reload (:8000) + Vite (:5173)
+#   ./start.sh          Baut die Seite und zeigt sie unter http://127.0.0.1:4173
+#   ./start.sh --dev    Entwicklungsmodus: Vite mit Hot Reload auf :5173
 #
 # Beim ersten Lauf werden venv, Python- und npm-Abhaengigkeiten automatisch
-# installiert. Port ueberschreiben: PORT=9000 ./start.sh
+# installiert. Der Fragenkatalog (Python) wird bei jedem Start nach
+# frontend/public/questions.json exportiert. Port: PORT=9000 ./start.sh
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BACKEND="$ROOT/backend"
 FRONTEND="$ROOT/frontend"
-PORT="${PORT:-8000}"
+PORT="${PORT:-4173}"
 MODE="prod"
 
 case "${1:-}" in
   "") ;;
   --dev) MODE="dev" ;;
-  -h|--help) sed -n '2,9p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit 0 ;;
+  -h|--help) sed -n '2,8p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit 0 ;;
   *) echo "Unbekannte Option: $1 (siehe --help)" >&2; exit 1 ;;
 esac
 
@@ -26,7 +27,7 @@ need python3
 need node
 need npm
 
-# ------------------------------------------------------------------ Backend
+# ------------------------------------------------------------------ Katalog
 if [ ! -x "$BACKEND/.venv/bin/python" ]; then
   echo "==> Erstelle Python-venv"
   python3 -m venv "$BACKEND/.venv"
@@ -36,7 +37,7 @@ PY="$BACKEND/.venv/bin/python"
 # Requirements nur neu installieren, wenn sie sich geaendert haben
 REQ_STAMP="$BACKEND/.venv/.requirements.stamp"
 if [ ! -f "$REQ_STAMP" ] || [ "$BACKEND/requirements.txt" -nt "$REQ_STAMP" ]; then
-  echo "==> Installiere Backend-Abhaengigkeiten"
+  echo "==> Installiere Python-Abhaengigkeiten"
   "$PY" -m pip install --quiet -r "$BACKEND/requirements.txt"
   touch "$REQ_STAMP"
 fi
@@ -47,6 +48,9 @@ if [ -z "$(ls -A "$BACKEND/static/covers" 2>/dev/null)" ]; then
   (cd "$BACKEND" && "$PY" tools/gen_covers.py)
 fi
 
+echo "==> Exportiere Fragenkatalog"
+(cd "$BACKEND" && "$PY" tools/export_catalog.py)
+
 # ----------------------------------------------------------------- Frontend
 if [ ! -d "$FRONTEND/node_modules" ] || [ "$FRONTEND/package-lock.json" -nt "$FRONTEND/node_modules" ]; then
   echo "==> Installiere Frontend-Abhaengigkeiten"
@@ -54,18 +58,13 @@ if [ ! -d "$FRONTEND/node_modules" ] || [ "$FRONTEND/package-lock.json" -nt "$FR
 fi
 
 # -------------------------------------------------------------------- Start
+cd "$FRONTEND"
 if [ "$MODE" = "dev" ]; then
-  echo "==> Entwicklungsmodus: Backend :8000, Frontend http://localhost:5173"
-  (cd "$BACKEND" && exec "$PY" -m uvicorn app.main:app --reload --port 8000) &
-  BACKEND_PID=$!
-  trap 'kill "$BACKEND_PID" 2>/dev/null || true' EXIT INT TERM
-  cd "$FRONTEND" && npm run dev
+  echo "==> Entwicklungsmodus: http://localhost:5173"
+  exec npm run dev
 else
-  # Neu bauen, wenn dist fehlt oder Quellen neuer sind
-  if [ ! -d "$FRONTEND/dist" ] || [ -n "$(find "$FRONTEND/src" "$FRONTEND/index.html" "$FRONTEND/package.json" -newer "$FRONTEND/dist" -print -quit)" ]; then
-    echo "==> Baue Frontend"
-    (cd "$FRONTEND" && npm run build)
-  fi
+  echo "==> Baue Frontend"
+  npm run build
   echo "==> Spiel laeuft auf http://127.0.0.1:$PORT  (Strg+C beendet)"
-  cd "$BACKEND" && exec "$PY" -m uvicorn app.main:app --port "$PORT"
+  exec npx vite preview --host 127.0.0.1 --port "$PORT" --strictPort
 fi

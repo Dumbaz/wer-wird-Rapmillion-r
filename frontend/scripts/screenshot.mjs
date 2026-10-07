@@ -3,12 +3,12 @@
  * Visueller Smoke-Test: klickt das Quiz wie ein echter User durch
  * und legt Screenshots in /tmp/shots ab.
  *
- *   node scripts/screenshot.mjs            (Backend muss auf :8014 laufen)
+ *   node scripts/screenshot.mjs            (Seite muss laufen: ./start.sh, Standard http://127.0.0.1:4173)
  */
 import { chromium } from "playwright";
 import { mkdirSync } from "node:fs";
 
-const BASE = process.env.QUIZ_URL ?? "http://127.0.0.1:8014";
+const BASE = process.env.QUIZ_URL ?? "http://127.0.0.1:4173";
 const OUT = "/tmp/shots";
 mkdirSync(OUT, { recursive: true });
 
