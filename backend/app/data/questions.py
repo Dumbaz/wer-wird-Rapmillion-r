@@ -1836,6 +1836,18 @@ RAW: list[dict] = [
         "year": 2000,
         "source": G + "Deichkind-komm-schon-lyrics",
     },
+    # ================================================== Jahrgang 2004
+    {
+        "level": 9,
+        "line": "Geld, Sex, Gewalt und Drogen / Ich bin geboren für das Leben ganz oben",
+        "answers": ["Sido", "Eko Fresh", "Curse"],
+        "correct": 0,
+        "artist": "Sido",
+        "track": "Maske",
+        "album": "Maske",
+        "year": 2004,
+        "source": G + "Sido-maske-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
