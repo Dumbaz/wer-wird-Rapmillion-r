@@ -1565,6 +1565,18 @@ RAW: list[dict] = [
         "year": 1993,
         "source": G + "Die-fantastischen-vier-zu-geil-fur-diese-welt-lyrics",
     },
+    # ================================================== Jahrgang 1994
+    {
+        "level": 12,
+        "line": "Ich erwache jeden Morgen mit Tränen auf den Wangen",
+        "answers": ["Rödelheim Hartreim Projekt", "Die Fantastischen Vier", "Advanced Chemistry"],
+        "correct": 0,
+        "artist": "Rödelheim Hartreim Projekt",
+        "track": "Keine ist",
+        "album": "Direkt aus Rödelheim",
+        "year": 1994,
+        "source": G + "Rodelheim-hartreim-projekt-keine-ist-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
