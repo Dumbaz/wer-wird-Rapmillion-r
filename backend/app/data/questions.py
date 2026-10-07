@@ -1721,6 +1721,18 @@ RAW: list[dict] = [
         "year": 2025,
         "source": G + "Shirin-david-bauch-beine-po-lyrics",
     },
+    # ================================================== Jahrgang 2003
+    {
+        "level": 7,
+        "line": "Ich bin der meistgehasste, weil mich die Meisten hassen",
+        "answers": ["Eko Fresh", "Massiv", "Azad"],
+        "correct": 0,
+        "artist": "Eko Fresh",
+        "track": "Ich bin jung und brauche das Geld",
+        "album": "Ich bin jung und brauche das Geld",
+        "year": 2003,
+        "source": G + "Eko-fresh-ich-bin-jung-und-brauche-das-geld-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
