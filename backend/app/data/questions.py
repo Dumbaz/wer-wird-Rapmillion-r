@@ -1661,6 +1661,18 @@ RAW: list[dict] = [
         "year": 2010,
         "source": G + "Bushido-zeiten-andern-dich-lyrics",
     },
+    # ================================================== Jahrgang 2012
+    {
+        "level": 3,
+        "line": "Denn diese Welt ist geil, jeder Tag zurzeit macht Spaß und es ist wahr",
+        "answers": ["CRO", "Casper", "Marteria"],
+        "correct": 0,
+        "artist": "CRO",
+        "track": "Du",
+        "album": "Raop",
+        "year": 2012,
+        "source": G + "Cro-du-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
