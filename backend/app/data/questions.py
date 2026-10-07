@@ -1895,6 +1895,18 @@ RAW: list[dict] = [
         "year": 2018,
         "source": G + "Capital-bra-berlin-lebt-lyrics",
     },
+    # ================================================== Jahrgang 2020
+    {
+        "level": 4,
+        "line": "Mama, schau her, dein Sohn hat es endlich geschafft",
+        "answers": ["Apache 207", "Luciano", "Ufo361"],
+        "correct": 0,
+        "artist": "Apache 207",
+        "track": "Fame",
+        "album": "Treppenhaus",
+        "year": 2020,
+        "source": G + "Apache-207-fame-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
