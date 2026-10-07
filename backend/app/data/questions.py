@@ -1813,6 +1813,29 @@ RAW: list[dict] = [
         "year": 2019,
         "source": G + "Shindy-nautilus-lyrics",
     },
+    # ================================================== Jahrgang 2000
+    {
+        "level": 10,
+        "line": "Meine Crew frisst Mics zum Mittag wie Schnittlauch",
+        "answers": ["Deichkind", "Fettes Brot", "Blumentopf"],
+        "correct": 0,
+        "artist": "Deichkind",
+        "track": "Bon Voyage",
+        "album": "Bitte ziehen Sie durch",
+        "year": 2000,
+        "source": G + "Deichkind-bon-voyage-lyrics",
+    },
+    {
+        "level": 12,
+        "line": "Die Crew, die mehr burnt als 'n Solarium",
+        "answers": ["Deichkind", "Fettes Brot", "Blumentopf"],
+        "correct": 0,
+        "artist": "Deichkind",
+        "track": "Komm schon!",
+        "album": "Bitte ziehen Sie durch",
+        "year": 2000,
+        "source": G + "Deichkind-komm-schon-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(
