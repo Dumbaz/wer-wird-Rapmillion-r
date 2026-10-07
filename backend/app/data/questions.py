@@ -1357,7 +1357,7 @@ RAW: list[dict] = [
     {
         "level": 7,
         "line": "Baby, es gibt Tausende wie dich, aber glaub mir, es gibt nur eine wie mich",
-        "answers": ["TIEFBASSKOMMANDO", "MC Bomber", "MecsTreem"],
+        "answers": ["TIEFBASSKOMMANDO", "Taktloss", "MOK"],
         "correct": 0,
         "artist": "TIEFBASSKOMMANDO",
         "track": "Eine wie mich",
@@ -1401,7 +1401,7 @@ RAW: list[dict] = [
     {
         "level": 9,
         "line": "Du ekelst dich vor der Sündenstadt am Spreeufer",
-        "answers": ["MC Bomber", "Rokko Weissensee", "MecsTreem"],
+        "answers": ["MC Bomber", "Rokko Weissensee", "Taktloss"],
         "correct": 0,
         "artist": "MC Bomber",
         "track": "Feiern und ficken",

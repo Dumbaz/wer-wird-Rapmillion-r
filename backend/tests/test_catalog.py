@@ -129,9 +129,10 @@ def test_antwortoptionen_ueberschneiden_sich_nicht_personell():
 
 
 # Crews, bei denen mehrere Mitglieder als Optionen die Frage unnoetig schwer
-# machen (Gzuz, Bonez MC und Maxwell sind alle 187 Strassenbande). Weichere
+# machen (Gzuz, Bonez MC und Maxwell sind alle 187 Strassenbande; MC Bomber
+# und MecsTreem sind ein Duo). Weichere
 # Faelle (Label-Kollegen wie Aggro Berlin) sind bewusst nicht erfasst.
-STRIKTE_GRUPPEN = {"187 strassenbande"}
+STRIKTE_GRUPPEN = {"187 strassenbande", "mc bomber & mecstreem"}
 
 
 def test_hoechstens_eine_option_pro_strikter_gruppe():
