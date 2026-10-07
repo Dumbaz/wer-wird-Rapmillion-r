@@ -1848,6 +1848,18 @@ RAW: list[dict] = [
         "year": 2004,
         "source": G + "Sido-maske-lyrics",
     },
+    # ================================================== Jahrgang 2006
+    {
+        "level": 9,
+        "line": "Auf dem Foto in der Küche sieht sie aus wie Katja Ebstein",
+        "answers": ["Deichkind", "Seeed", "Culcha Candela"],
+        "correct": 0,
+        "artist": "Deichkind",
+        "track": "Remmidemmi (Yippie Yippie Yeah)",
+        "album": "Aufstand im Schlaraffenland",
+        "year": 2006,
+        "source": G + "Deichkind-remmidemmi-yippie-yippie-yeah-lyrics",
+    },
 ]
 
 TRANSLITERATION = str.maketrans(

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Aufstand im Schlaraffenland von Deichkind">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(5 0.5 0.5)">
+      <stop offset="0%" stop-color="#ff6a00"/>
+      <stop offset="100%" stop-color="#c2185b"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="600" height="600"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="600" height="600" fill="url(#bg)"/>
+    <circle cx="461.4" cy="334.8" r="155.4" fill="none" stroke="#ffe600" stroke-width="2.2" opacity="0.40"/>
+    <circle cx="565.6" cy="441.3" r="205.2" fill="none" stroke="#ffe600" stroke-width="8.7" opacity="0.33"/>
+    <circle cx="138.6" cy="290.6" r="158.2" fill="none" stroke="#ffe600" stroke-width="6.6" opacity="0.50"/>
+    <circle cx="156.0" cy="350.2" r="90.5" fill="none" stroke="#ffe600" stroke-width="5.7" opacity="0.19"/>
+    <circle cx="60.1" cy="130.6" r="160.3" fill="none" stroke="#ffe600" stroke-width="5.6" opacity="0.20"/>
+    <circle cx="372.2" cy="22.8" r="191.6" fill="none" stroke="#ffe600" stroke-width="6.7" opacity="0.16"/>
+    <circle cx="545.8" cy="109.2" r="88.1" fill="none" stroke="#ffe600" stroke-width="2.0" opacity="0.17"/>
+    <rect width="600" height="600" filter="url(#grain)" opacity="0.10"/>
+    <rect x="0" y="380" width="600" height="220" fill="#000" opacity="0.58"/>
+    <text x="52" y="426" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#ffe600">DEICHKIND</text>
+    <text x="52" y="480" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">
+      <tspan x="52" dy="0">AUFSTAND IM</tspan>
+      <tspan x="52" dy="58">SCHLARAFFENLAND</tspan>
+    </text>
+    <text x="548" y="426" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" opacity="0.75">2006</text>
+  </g>
+  <rect x="4" y="4" width="592" height="592" fill="none" stroke="#ffe600" stroke-width="6" opacity="0.9"/>
+</svg>
